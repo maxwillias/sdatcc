@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TrabalhoController;
 use Illuminate\Support\Facades\Route;
+
+Route::resource('trabalhos', TrabalhoController::class);
 
 Route::get('/', function () {
     return view('welcome');
