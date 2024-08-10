@@ -2,12 +2,16 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TrabalhoController;
+use App\Models\Trabalho;
 use Illuminate\Support\Facades\Route;
 
 Route::resource('trabalhos', TrabalhoController::class);
 
 Route::get('/', function () {
-    return view('index');
+
+    $items = Trabalho::search()->paginate(20);
+
+    return view('index', compact('items'));
 });
 
 Route::get('/dashboard', function () {
