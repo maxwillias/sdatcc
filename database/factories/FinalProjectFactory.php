@@ -2,15 +2,15 @@
 
 namespace Database\Factories;
 
-use App\Models\Trabalho;
+use App\Models\FinalProject;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Trabalho>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\FinalProject>
  */
-class TrabalhoFactory extends Factory
+class FinalProjectFactory extends Factory
 {
-    protected $model = Trabalho::class;
+    protected $model = FinalProject::class;
 
     /**
      * Define the model's default state.

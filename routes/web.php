@@ -1,15 +1,15 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\TrabalhoController;
-use App\Models\Trabalho;
+use App\Http\Controllers\FinalProjectController;
+use App\Models\FinalProject;
 use Illuminate\Support\Facades\Route;
 
-Route::resource('trabalhos', TrabalhoController::class);
+Route::resource('TCCs', FinalProjectController::class);
 
 Route::get('/', function () {
 
-    $items = Trabalho::search()->paginate(20);
+    $items = FinalProject::search()->paginate(20);
 
     return view('index', compact('items'));
 });

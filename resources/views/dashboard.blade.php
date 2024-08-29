@@ -14,9 +14,9 @@
             </div>
         </div>
 
-        <x-trabalho titulo="Site para doação de Jacarézinhos" status="em Andamento" orientador="Raphael Magalhães"
+        <x-final-project titulo="Site para doação de Jacarézinhos" status="em Andamento" orientador="Raphael Magalhães"
             data-publicacao="5 de Outubro 2023" aluno="Willias Júnior Farias de Souza" />
-        <x-trabalho titulo="Site para doação de doguinhos" status="Concluído" orientador="Joselixo"
+        <x-final-project titulo="Site para doação de doguinhos" status="Concluído" orientador="Joselixo"
             data-publicacao="25 de Maio 2028" aluno="Willias Renan" />
 
     </div>

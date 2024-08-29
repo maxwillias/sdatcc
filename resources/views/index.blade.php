@@ -4,7 +4,7 @@
             {{ $items->appends(request()->input())->links() }}
         </div>
         @foreach ($items as $item)
-            <x-trabalho titulo="{{ $item->titulo }}" status="{{ $item->status }}" orientador="{{ $item->orientador }}"
+            <x-final-project titulo="{{ $item->titulo }}" status="{{ $item->status }}" orientador="{{ $item->orientador }}"
                 data-publicacao="{{ $item->data_publicacao }}" aluno="{{ $item->aluno }}" />
         @endforeach
         <div>

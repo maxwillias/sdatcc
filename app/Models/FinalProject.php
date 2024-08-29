@@ -2,19 +2,19 @@
 
 namespace App\Models;
 
-use Database\Factories\TrabalhoFactory;
+use Database\Factories\FinalProjectFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Scout\Searchable;
 
-class Trabalho extends Model
+class FinalProject extends Model
 {
     use HasFactory;
     use Searchable;
     use SoftDeletes;
 
-    protected $table =  'trabalhos';
+    protected $table = 'TCCs';
 
     protected $fillable = [
         'aluno',
@@ -31,6 +31,6 @@ class Trabalho extends Model
 
     protected static function newFactory()
     {
-        return TrabalhoFactory::new();
+        return FinalProjectFactory::new();
     }
 }

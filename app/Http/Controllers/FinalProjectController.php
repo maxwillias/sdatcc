@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreTrabalhoRequest;
-use App\Http\Requests\UpdateTrabalhoRequest;
-use App\Models\Trabalho;
+use App\Http\Requests\StoreFinalProjectRequest;
+use App\Http\Requests\UpdateFinalProjectRequest;
+use App\Models\FinalProject;
 
-class TrabalhoController extends Controller
+class FinalProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class TrabalhoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreTrabalhoRequest $request)
+    public function store(StoreFinalProjectRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class TrabalhoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Trabalho $trabalho)
+    public function show(FinalProject $FinalProject)
     {
         //
     }
@@ -43,7 +43,7 @@ class TrabalhoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Trabalho $trabalho)
+    public function edit(FinalProject $FinalProject)
     {
         //
     }
@@ -51,7 +51,7 @@ class TrabalhoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateTrabalhoRequest $request, Trabalho $trabalho)
+    public function update(UpdateFinalProjectRequest $request, FinalProject $FinalProject)
     {
         //
     }
@@ -59,7 +59,7 @@ class TrabalhoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Trabalho $trabalho)
+    public function destroy(FinalProject $FinalProject)
     {
         //
     }
