@@ -9,7 +9,7 @@ Route::resource('TCCs', FinalProjectController::class);
 
 Route::get('/', function () {
 
-    $items = FinalProject::search()->paginate(20);
+    $items = FinalProject::search()->paginate(10);
 
     return view('index', compact('items'));
 });
