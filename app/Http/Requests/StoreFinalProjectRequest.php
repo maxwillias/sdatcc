@@ -11,7 +11,7 @@ class StoreFinalProjectRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,13 @@ class StoreFinalProjectRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'aluno' => 'string',
+            'orientador' => 'string',
+            'titulo' => 'string',
+            'resumo' => 'string',
+            'status' => 'string',
+            'data_publicacao' => 'date',
+            'arquivo' => 'file',
         ];
     }
 }

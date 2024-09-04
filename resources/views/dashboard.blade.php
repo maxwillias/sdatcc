@@ -7,18 +7,9 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
+            <a href="{{ route('TCCs.create') }}" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700"> Novo </a>
+            <a href="{{ route('TCCs.create') }}" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700"> Download </a>
         </div>
-
-        <x-final-project titulo="Site para doação de Jacarézinhos" status="em Andamento" orientador="Raphael Magalhães"
-            data-publicacao="5 de Outubro 2023" aluno="Willias Júnior Farias de Souza" />
-        <x-final-project titulo="Site para doação de doguinhos" status="Concluído" orientador="Joselixo"
-            data-publicacao="25 de Maio 2028" aluno="Willias Renan" />
-
     </div>
 
 </x-admin-layout>

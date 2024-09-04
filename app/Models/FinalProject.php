@@ -21,6 +21,8 @@ class FinalProject extends Model
         'orientador',
         'data_publicacao',
         'titulo',
+        'arquivo_nome',
+        'arquivo_path',
         'resumo',
         'status',
     ];

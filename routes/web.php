@@ -1,11 +1,12 @@
 <?php
 
+use App\Http\Controllers\Admin\FinalProjectController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\FinalProjectController;
 use App\Models\FinalProject;
 use Illuminate\Support\Facades\Route;
 
 Route::resource('TCCs', FinalProjectController::class);
+Route::get('download/{project}', [FinalProjectController::class, 'download']);
 
 Route::get('/', function () {
 
