@@ -15,7 +15,9 @@ class FinalProjectController extends Controller
      */
     public function index()
     {
-        //
+        $items = FinalProject::search()->paginate(10);
+
+        return view('index', compact('items'));
     }
 
     /**
@@ -23,7 +25,7 @@ class FinalProjectController extends Controller
      */
     public function create()
     {
-        return view('final-project.admin.new');
+        return view('admin.final-project.new');
     }
 
     /**

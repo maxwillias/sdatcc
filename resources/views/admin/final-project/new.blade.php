@@ -4,7 +4,7 @@
             <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md">
                 <h1 class="text-2xl font-semibold mb-6">Formulário de Criação de TCC</h1>
 
-                <form action="{{ route('TCCs.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin.TCCs.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <!-- Aluno -->

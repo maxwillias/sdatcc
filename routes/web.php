@@ -1,22 +1,36 @@
 <?php
 
-use App\Http\Controllers\Admin\FinalProjectController;
+use App\Http\Controllers\Admin\FinalProjectController as AdminFinalProjectController;
+use App\Http\Controllers\User\FinalProjectController;
 use App\Http\Controllers\ProfileController;
 use App\Models\FinalProject;
 use Illuminate\Support\Facades\Route;
 
-Route::resource('TCCs', FinalProjectController::class);
-Route::get('download/{project}', [FinalProjectController::class, 'download']);
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::group(['as' => 'admin.'],function () {
+        Route::prefix('admin')->group(function () {
+            Route::resource('TCCs', AdminFinalProjectController::class);
+        });
+    });
+});
+
+Route::get('download/{project}', [AdminFinalProjectController::class, 'download']);
+
+Route::group(['as' => 'user.'], function () {
+    Route::prefix('user')->group(function () {
+        Route::resource('TCCs', FinalProjectController::class)->only([
+            'index', 'show'
+        ]);
+    });
+});
 
 Route::get('/', function () {
-
-    $items = FinalProject::search()->paginate(10);
-
-    return view('index', compact('items'));
+    return to_route('user.TCCs.index');
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('admin.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
