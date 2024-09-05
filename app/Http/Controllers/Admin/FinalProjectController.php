@@ -17,7 +17,7 @@ class FinalProjectController extends Controller
     {
         $items = FinalProject::search()->paginate(10);
 
-        return view('index', compact('items'));
+        return view('admin.final-project.index', compact('items'));
     }
 
     /**
@@ -49,7 +49,7 @@ class FinalProjectController extends Controller
             'status' => 1,
         ]);
 
-        return view('dashboard');
+        return to_route('admin.TCCs.index');
     }
 
     public function download(FinalProject $project){
@@ -59,9 +59,9 @@ class FinalProjectController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(FinalProject $FinalProject)
+    public function show(FinalProject $TCC)
     {
-        //
+        return view('admin.final-project.view',['item' => $TCC]);
     }
 
     /**

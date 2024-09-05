@@ -15,7 +15,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     });
 });
 
-Route::get('download/{project}', [AdminFinalProjectController::class, 'download']);
+Route::get('download/{project}', [AdminFinalProjectController::class, 'download'])->name('download');
 
 Route::group(['as' => 'user.'], function () {
     Route::prefix('user')->group(function () {
