@@ -42,7 +42,7 @@
                                         {{ $item->data_publicacao }}
                                     </td>
                                     <td>
-                                        <a href="{{ route('user.final-projects.show', ['finalProject', $item]) }}"> Clica</a>
+                                        <a href="{{ route('user.final-projects.show', ['final_project' => $item]) }}"> Clica</a>
                                     </td>
                                 </tr>
                             </tbody>

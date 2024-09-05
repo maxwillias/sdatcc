@@ -20,9 +20,9 @@ class FinalProjectController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(FinalProject $FinalProject)
+    public function show(FinalProject $final_project)
     {
-        //
+        return view('user.final-project.view', ['item' => $final_project]);
     }
 
 }

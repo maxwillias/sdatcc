@@ -67,7 +67,7 @@ class FinalProjectController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(FinalProject $FinalProject)
+    public function edit(FinalProject $final_project)
     {
         //
     }
@@ -75,7 +75,7 @@ class FinalProjectController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateFinalProjectRequest $request, FinalProject $FinalProject)
+    public function update(UpdateFinalProjectRequest $request, FinalProject $final_project)
     {
         //
     }
@@ -83,7 +83,7 @@ class FinalProjectController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(FinalProject $FinalProject)
+    public function destroy(FinalProject $final_project)
     {
         //
     }
