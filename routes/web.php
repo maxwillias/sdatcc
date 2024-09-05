@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::group(['as' => 'admin.'],function () {
         Route::prefix('admin')->group(function () {
-            Route::resource('TCCs', AdminFinalProjectController::class);
+            Route::resource('final-projects', AdminFinalProjectController::class);
         });
     });
 });
@@ -19,14 +19,14 @@ Route::get('download/{project}', [AdminFinalProjectController::class, 'download'
 
 Route::group(['as' => 'user.'], function () {
     Route::prefix('user')->group(function () {
-        Route::resource('TCCs', FinalProjectController::class)->only([
+        Route::resource('final-projects', FinalProjectController::class)->only([
             'index', 'show'
         ]);
     });
 });
 
 Route::get('/', function () {
-    return to_route('user.TCCs.index');
+    return to_route('user.final-projects.index');
 });
 
 Route::get('/dashboard', function () {

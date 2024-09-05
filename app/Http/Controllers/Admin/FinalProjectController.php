@@ -49,7 +49,7 @@ class FinalProjectController extends Controller
             'status' => 1,
         ]);
 
-        return to_route('admin.TCCs.index');
+        return to_route('admin.final-projects.index');
     }
 
     public function download(FinalProject $project){
@@ -59,9 +59,9 @@ class FinalProjectController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(FinalProject $TCC)
+    public function show(FinalProject $final_project)
     {
-        return view('admin.final-project.view',['item' => $TCC]);
+        return view('admin.final-project.view',['item' => $final_project]);
     }
 
     /**

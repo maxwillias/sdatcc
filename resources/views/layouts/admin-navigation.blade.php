@@ -17,7 +17,7 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('admin.TCCs.index')" :active="request()->routeIs('admin.TCCs.index')">
+                    <x-nav-link :href="route('admin.final-projects.index')" :active="request()->routeIs('admin.final-projects.index')">
                         Trabalhos de conclusão de curso
                     </x-nav-link>
                 </div>
