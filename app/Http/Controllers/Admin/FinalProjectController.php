@@ -69,7 +69,7 @@ class FinalProjectController extends Controller
      */
     public function edit(FinalProject $final_project)
     {
-        //
+        dd('edit');
     }
 
     /**
@@ -85,6 +85,6 @@ class FinalProjectController extends Controller
      */
     public function destroy(FinalProject $final_project)
     {
-        //
+        dd('destroy');
     }
 }
