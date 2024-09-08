@@ -53,7 +53,7 @@ class FinalProjectController extends Controller
     }
 
     public function download(FinalProject $project){
-        return Storage::disk('public')->download($project->arquivo_path);
+        return Storage::disk('public')->download($project->arquivo_path, $project->arquivo_nome);
     }
 
     /**
@@ -69,7 +69,7 @@ class FinalProjectController extends Controller
      */
     public function edit(FinalProject $final_project)
     {
-        dd('edit');
+        return view('admin.final-project.edit', ['item' => $final_project]);
     }
 
     /**
@@ -77,7 +77,7 @@ class FinalProjectController extends Controller
      */
     public function update(UpdateFinalProjectRequest $request, FinalProject $final_project)
     {
-        //
+        dd($final_project);
     }
 
     /**
@@ -85,6 +85,8 @@ class FinalProjectController extends Controller
      */
     public function destroy(FinalProject $final_project)
     {
-        dd('destroy');
+        $final_project->deleteOrFail();
+
+        return to_route("admin.final-projects.index");
     }
 }
