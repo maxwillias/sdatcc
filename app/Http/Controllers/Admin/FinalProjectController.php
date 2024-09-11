@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreFinalProjectRequest;
 use App\Http\Requests\UpdateFinalProjectRequest;
 use App\Models\FinalProject;
-use Illuminate\Support\Facades\Storage;
 
 class FinalProjectController extends Controller
 {
@@ -52,10 +51,6 @@ class FinalProjectController extends Controller
         return to_route('admin.final-projects.index');
     }
 
-    public function download(FinalProject $project){
-        return Storage::disk('public')->download($project->arquivo_path, $project->arquivo_nome);
-    }
-
     /**
      * Display the specified resource.
      */
@@ -87,6 +82,6 @@ class FinalProjectController extends Controller
     {
         $final_project->deleteOrFail();
 
-        return to_route("admin.final-projects.index");
+        return to_route('admin.final-projects.index');
     }
 }
