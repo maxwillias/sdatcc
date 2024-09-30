@@ -4,7 +4,7 @@ use App\Http\Controllers\Admin\FinalProjectController as AdminFinalProjectContro
 use App\Http\Controllers\User\FinalProjectController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\User\DownloadController;
-use App\Models\FinalProject;
+use App\Http\Controllers\User\EmbedController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -17,12 +17,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 Route::get('download/{project}', DownloadController::class)->name('download');
+Route::get('embed/{project}', EmbedController::class)->name('embed');
 
 Route::group(['as' => 'user.'], function () {
     Route::prefix('user')->group(function () {
-        Route::resource('final-projects', FinalProjectController::class)->only([
-            'index', 'show'
-        ]);
+        Route::resource('final-projects', FinalProjectController::class)->only(['index']);
     });
 });
 

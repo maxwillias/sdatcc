@@ -16,13 +16,4 @@ class FinalProjectController extends Controller
 
         return view('user.final-project.index', compact('items'));
     }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(FinalProject $final_project)
-    {
-        return view('user.final-project.view', ['item' => $final_project]);
-    }
-
 }
