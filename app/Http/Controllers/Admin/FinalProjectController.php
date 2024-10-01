@@ -52,14 +52,6 @@ class FinalProjectController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(FinalProject $final_project)
-    {
-        return view('admin.final-project.view',['item' => $final_project]);
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
     public function edit(FinalProject $final_project)
@@ -72,7 +64,36 @@ class FinalProjectController extends Controller
      */
     public function update(UpdateFinalProjectRequest $request, FinalProject $final_project)
     {
-        dd($final_project);
+        $data = $request->validated();
+
+        if(isset($data['arquivo'])){
+            unlink(storage_path('app/public/' . $final_project->arquivo_path));
+
+            $file = $data['arquivo'];
+            $arquivo_nome = $file->getClientOriginalName();
+            $arquivo_path = $file->store('TCCs', 'public');
+
+            $final_project->updateOrFail([
+                'aluno' => $data['aluno'],
+                'orientador' => $data['orientador'],
+                'data_publicacao' => $data['data_publicacao'],
+                'titulo' => $data['titulo'],
+                'arquivo_nome' => $arquivo_nome,
+                'arquivo_path' => $arquivo_path,
+                'resumo' => $data['resumo'],
+                'status' => 1,
+            ]);
+        }else{
+            $final_project->updateOrFail([
+                'aluno' => $data['aluno'],
+                'orientador' => $data['orientador'],
+                'data_publicacao' => $data['data_publicacao'],
+                'titulo' => $data['titulo'],
+                'resumo' => $data['resumo'],
+                'status' => 1,
+            ]);
+        }
+        return to_route('admin.final-projects.index');
     }
 
     /**
