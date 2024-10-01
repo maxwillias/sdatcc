@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreFinalProjectRequest;
 use App\Http\Requests\UpdateFinalProjectRequest;
 use App\Models\FinalProject;
+use Illuminate\Support\Facades\Storage;
 
 class FinalProjectController extends Controller
 {
@@ -67,7 +68,7 @@ class FinalProjectController extends Controller
         $data = $request->validated();
 
         if(isset($data['arquivo'])){
-            unlink(storage_path('app/public/' . $final_project->arquivo_path));
+            Storage::disk('public')->delete($final_project->arquivo_path);
 
             $file = $data['arquivo'];
             $arquivo_nome = $file->getClientOriginalName();
