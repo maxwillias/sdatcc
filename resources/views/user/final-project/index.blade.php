@@ -6,7 +6,7 @@
         @foreach ($items as $item)
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-4">
                 <div class="bg-white dark:bg-gray-800 overflow-hidden p-4 shadow-sm sm:rounded-lg border-solid border-2 border-[#5ACC58]">
-                    <b>Trabalho {{ $item->status }}</b>
+                    <b>Trabalho Conclusão de Curso</b>
                     <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-2">
                         <table class="w-full text-sm text-left rtl:text-right text-gray-700 dark:text-gray-400">
                             <thead class="text-xs text-white uppercase bg-[#5ACC58] dark:bg-gray-700 dark:text-gray-400">

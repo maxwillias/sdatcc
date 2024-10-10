@@ -24,7 +24,6 @@ class FinalProject extends Model
         'arquivo_nome',
         'arquivo_path',
         'resumo',
-        'status',
     ];
 
     protected $dates = [

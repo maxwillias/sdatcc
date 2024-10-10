@@ -46,7 +46,6 @@ class FinalProjectController extends Controller
             'arquivo_nome' => $arquivo_nome,
             'arquivo_path' => $arquivo_path,
             'resumo' => $data['resumo'],
-            'status' => 1,
         ]);
 
         return to_route('admin.final-projects.index');
@@ -82,7 +81,6 @@ class FinalProjectController extends Controller
                 'arquivo_nome' => $arquivo_nome,
                 'arquivo_path' => $arquivo_path,
                 'resumo' => $data['resumo'],
-                'status' => 1,
             ]);
         }else{
             $final_project->updateOrFail([
@@ -91,7 +89,6 @@ class FinalProjectController extends Controller
                 'data_publicacao' => $data['data_publicacao'],
                 'titulo' => $data['titulo'],
                 'resumo' => $data['resumo'],
-                'status' => 1,
             ]);
         }
         return to_route('admin.final-projects.index');

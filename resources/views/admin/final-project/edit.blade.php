@@ -32,16 +32,6 @@
                         <textarea id="resumo" name="resumo" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>{{ $item->resumo }}</textarea>
                     </div>
 
-                    <!-- Status -->
-                    <div class="mb-4">
-                        <label for="status" class="block text-sm font-medium text-gray-700">Status</label>
-                        <select id="status" name="status" value="{{ $item->status }}" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
-                            <option value="em_andamento">Em andamento</option>
-                            <option value="concluido">Concluído</option>
-                            <option value="arquivado">Arquivado</option>
-                        </select>
-                    </div>
-
                     <!-- Data de Publicação -->
                     <div class="mb-4">
                         <label for="data_publicacao" class="block text-sm font-medium text-gray-700">Data de Publicação</label>

@@ -26,7 +26,6 @@ class UpdateFinalProjectRequest extends FormRequest
             'orientador' => 'string',
             'titulo' => 'string',
             'resumo' => 'string',
-            'status' => 'string',
             'data_publicacao' => 'date',
             'arquivo' => 'file',
         ];

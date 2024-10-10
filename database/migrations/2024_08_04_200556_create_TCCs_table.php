@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('arquivo_nome')->nullable();
             $table->string('arquivo_path')->nullable();
             $table->text('resumo')->nullable();
-            $table->boolean('status')->default(1);
             $table->date('data_publicacao')->nullable();
             $table->timestamps();
             $table->softDeletes();
