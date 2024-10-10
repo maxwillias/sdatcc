@@ -64,6 +64,9 @@
                          class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Ver</a>
                     </li>
                     <li>
+                        <a href="{{ route('download', ['project' => $item]) }}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Download</a>
+                    </li>
+                    <li>
                         <a href="{{ route('admin.final-projects.edit', ['final_project' => $item]) }}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Editar</a>
                     </li>
                 </ul>
