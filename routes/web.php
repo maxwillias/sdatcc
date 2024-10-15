@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\ArticleController as AdminArticleController;
 use App\Http\Controllers\Admin\FinalProjectController as AdminFinalProjectController;
+use App\Http\Controllers\User\ArticleController;
 use App\Http\Controllers\User\FinalProjectController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\User\DownloadController;
@@ -12,6 +14,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::group(['as' => 'admin.'],function () {
         Route::prefix('admin')->group(function () {
             Route::resource('final-projects', AdminFinalProjectController::class)->except(['show']);
+            Route::resource('articles', AdminArticleController::class)->except(['show']);
         });
     });
 });
@@ -22,6 +25,7 @@ Route::get('embed/{project}', EmbedController::class)->name('embed');
 Route::group(['as' => 'user.'], function () {
     Route::prefix('user')->group(function () {
         Route::resource('final-projects', FinalProjectController::class)->only(['index']);
+        Route::resource('articles', ArticleController::class)->only(['index']);
     });
 });
 
