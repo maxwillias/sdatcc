@@ -17,8 +17,10 @@
                     </x-nav-link>
                 </div>
 
-                <div class="">
-
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('user.articles.index')" :active="request()->routeIs('user.articles.index')">
+                        Artigos
+                    </x-nav-link>
                 </div>
             </div>
             <div class="hidden sm:flex sm:items-center sm:ml-6">

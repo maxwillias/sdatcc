@@ -5,8 +5,10 @@ use App\Http\Controllers\Admin\FinalProjectController as AdminFinalProjectContro
 use App\Http\Controllers\User\ArticleController;
 use App\Http\Controllers\User\FinalProjectController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\User\DownloadController;
-use App\Http\Controllers\User\EmbedController;
+use App\Http\Controllers\User\ArticleDownloadController;
+use App\Http\Controllers\User\ArticleEmbedController;
+use App\Http\Controllers\User\FinalProjectDownloadController;
+use App\Http\Controllers\User\FinalProjectEmbedController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -19,8 +21,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     });
 });
 
-Route::get('download/{project}', DownloadController::class)->name('download');
-Route::get('embed/{project}', EmbedController::class)->name('embed');
+Route::get('download/{project}', FinalProjectDownloadController::class)->name('project.download');
+Route::get('embed/{project}', FinalProjectEmbedController::class)->name('project.embed');
+Route::get('download/{article}', ArticleDownloadController::class)->name('article.download');
+Route::get('embed/{article}', ArticleEmbedController::class)->name('article.embed');
 
 Route::group(['as' => 'user.'], function () {
     Route::prefix('user')->group(function () {

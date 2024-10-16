@@ -6,7 +6,7 @@
         @foreach ($items as $item)
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-4">
                 <div class="bg-white dark:bg-gray-800 overflow-hidden p-4 shadow-sm sm:rounded-lg border-solid border-2 border-[#5ACC58]">
-                    <b>Trabalho Conclusão de Curso</b>
+                    <b>Artigos</b>
                     <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-2">
                         <table class="w-full text-sm text-left rtl:text-right text-gray-700 dark:text-gray-400">
                             <thead class="text-xs text-white uppercase bg-[#5ACC58] dark:bg-gray-700 dark:text-gray-400">
@@ -15,7 +15,7 @@
                                         Título
                                     </th>
                                     <th scope="col" class="px-6 py-3">
-                                        Aluno
+                                        Autor
                                     </th>
                                     <th scope="col" class="px-6 py-3">
                                         Orientador
@@ -35,7 +35,7 @@
                                         {{ $item->titulo }}
                                     </td>
                                     <td class="px-6 py-4">
-                                        {{ $item->aluno }}
+                                        {{ $item->autor }}
                                     </td>
                                     <td class="px-6 py-4">
                                         {{ $item->orientador }}
@@ -47,7 +47,7 @@
                                         <a href="javascript:void(0)" data-modal-toggle="modal-tcc-pdf-{{$item->id}}" data-modal-target="modal-tcc-pdf-{{$item->id}}"
                                             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
                                             > Ver</a>
-                                        <a href="{{ route('project.download', ['project' => $item]) }}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Baixar</a>
+                                        <a href="{{ route('article.download', ['article' => $item]) }}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Baixar</a>
                                     </td>
                                 </tr>
                             </tbody>
@@ -75,7 +75,7 @@
                         </div>
                         <!-- Modal body -->
                         <div class="p-4 md:p-5 space-y-4">
-                            <embed src="{{ route('project.embed', ['project' => $item]) }}" width="100%" height="400px" />
+                            <embed src="{{ route('article.embed', ['article' => $item]) }}" width="100%" height="400px" />
                         </div>
                     </div>
                 </div>

@@ -41,7 +41,7 @@
                                         {{ $item->orientador }}
                                     </td>
                                     <td class="px-6 py-4">
-                                        {{ $item->data_publicacao }}
+                                        {{ $item->data_publicacao->translatedFormat('j \\d\\e F \\d\\e Y') }}
                                     </td>
                                     <td class="px-6 py-4">
                                         <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown{{ $item->id }}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Mais <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
@@ -64,7 +64,7 @@
                          class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Ver</a>
                     </li>
                     <li>
-                        <a href="{{ route('download', ['project' => $item]) }}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Download</a>
+                        <a href="{{ route('project.download', ['project' => $item]) }}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Download</a>
                     </li>
                     <li>
                         <a href="{{ route('admin.final-projects.edit', ['final_project' => $item]) }}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Editar</a>
@@ -126,7 +126,7 @@
                         </div>
                         <!-- Modal body -->
                         <div class="p-4 md:p-5 space-y-4">
-                            <embed src="{{ route('embed', ['project' => $item]) }}" width="100%" height="400px" />
+                            <embed src="{{ route('project.embed', ['project' => $item]) }}" width="100%" height="400px" />
                         </div>
                     </div>
                 </div>

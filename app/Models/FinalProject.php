@@ -26,8 +26,8 @@ class FinalProject extends Model
         'resumo',
     ];
 
-    protected $dates = [
-        'data_publicacao'
+    protected $casts = [
+        'data_publicacao' => 'datetime',
     ];
 
     protected static function newFactory()
