@@ -21,10 +21,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     });
 });
 
-Route::get('download/{project}', FinalProjectDownloadController::class)->name('project.download');
-Route::get('embed/{project}', FinalProjectEmbedController::class)->name('project.embed');
-Route::get('download/{article}', ArticleDownloadController::class)->name('article.download');
-Route::get('embed/{article}', ArticleEmbedController::class)->name('article.embed');
+Route::get('download/final-project/{project}', FinalProjectDownloadController::class)->name('project.download');
+Route::get('embed/final-project/{project}', FinalProjectEmbedController::class)->name('project.embed');
+Route::get('download/article/{article}', ArticleDownloadController::class)->name('article.download');
+Route::get('embed/article/{article}', ArticleEmbedController::class)->name('article.embed');
 
 Route::group(['as' => 'user.'], function () {
     Route::prefix('user')->group(function () {

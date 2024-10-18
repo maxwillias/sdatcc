@@ -16,12 +16,18 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('admin.final-projects.index')" :active="request()->routeIs('admin.final-projects.index')">
                         Trabalhos de conclusão de curso
                     </x-nav-link>
                 </div>
 
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('admin.articles.index')" :active="request()->routeIs('admin.articles.index')">
+                        Artigos
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->
