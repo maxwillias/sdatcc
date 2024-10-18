@@ -48,7 +48,7 @@ class ArticleController extends Controller
             'resumo' => $data['resumo'],
         ]);
 
-        return to_route('admin.articles.index');
+        return to_route('admin.articles.index')->with('success', 'O Artigo foi salvo com sucesso.');
     }
 
     /**
@@ -91,7 +91,7 @@ class ArticleController extends Controller
                 'resumo' => $data['resumo'],
             ]);
         }
-        return to_route('admin.articles.index');
+        return to_route('admin.articles.index')->with('success', 'O Artigo foi atualizado com sucesso.');
     }
 
     /**
@@ -101,6 +101,6 @@ class ArticleController extends Controller
     {
         $article->deleteOrFail();
 
-        return to_route('admin.articles.index');
+        return to_route('admin.articles.index')->with('error', 'O Artigo foi deletado com sucesso.');
     }
 }

@@ -48,7 +48,7 @@ class FinalProjectController extends Controller
             'resumo' => $data['resumo'],
         ]);
 
-        return to_route('admin.final-projects.index');
+        return to_route('admin.final-projects.index')->with('success', 'O TCC foi salvo com sucesso.');
     }
 
     /**
@@ -91,7 +91,7 @@ class FinalProjectController extends Controller
                 'resumo' => $data['resumo'],
             ]);
         }
-        return to_route('admin.final-projects.index');
+        return to_route('admin.final-projects.index')->with('success', 'O TCC foi atualizado com sucesso.');
     }
 
     /**
@@ -101,6 +101,6 @@ class FinalProjectController extends Controller
     {
         $final_project->deleteOrFail();
 
-        return to_route('admin.final-projects.index');
+        return to_route('admin.final-projects.index')->with('error', 'O TCC foi deletado com sucesso.');
     }
 }
