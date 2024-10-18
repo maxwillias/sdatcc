@@ -1,4 +1,14 @@
 <x-user-layout>
+
+    <x-slot name="header">
+        <div class="flex">
+            <h2 class="font-semibold text-xl text-gray-400 leading-tight w-5/6 flex items-center">
+                Trabalho Conclusão de Curso
+                <span class="bg-green-700 text-white text-xs px-3 py-2 rounded-full ml-2">{{ $items->total() }}</span>
+            </h2>
+        </div>
+    </x-slot>
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-4">
             {{ $items->appends(request()->input())->links() }}
