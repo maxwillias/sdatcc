@@ -1,12 +1,16 @@
 <?php
 
 use App\Http\Controllers\Admin\ArticleController as AdminArticleController;
+use App\Http\Controllers\Admin\ArticleSearchableController as AdminArticleSearchableController;
 use App\Http\Controllers\Admin\FinalProjectController as AdminFinalProjectController;
+use App\Http\Controllers\Admin\FinalProjectSearchableController as AdminFinalProjectSearchableController;
 use App\Http\Controllers\User\ArticleController;
 use App\Http\Controllers\User\FinalProjectController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\User\FinalProjectSearchableController;
 use App\Http\Controllers\User\ArticleDownloadController;
 use App\Http\Controllers\User\ArticleEmbedController;
+use App\Http\Controllers\User\ArticleSearchableController;
 use App\Http\Controllers\User\FinalProjectDownloadController;
 use App\Http\Controllers\User\FinalProjectEmbedController;
 use Illuminate\Support\Facades\Route;
@@ -17,6 +21,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::prefix('admin')->group(function () {
             Route::resource('final-projects', AdminFinalProjectController::class)->except(['show']);
             Route::resource('articles', AdminArticleController::class)->except(['show']);
+            Route::get('/final-projects/search', AdminFinalProjectSearchableController::class)->name('project.search');
+            Route::get('/articles/search', AdminArticleSearchableController::class)->name('article.search');
         });
     });
 });
@@ -30,6 +36,8 @@ Route::group(['as' => 'user.'], function () {
     Route::prefix('user')->group(function () {
         Route::resource('final-projects', FinalProjectController::class)->only(['index']);
         Route::resource('articles', ArticleController::class)->only(['index']);
+        Route::get('/final-projects/search', FinalProjectSearchableController::class)->name('project.search');
+        Route::get('/articles/search', ArticleSearchableController::class)->name('article.search');
     });
 });
 

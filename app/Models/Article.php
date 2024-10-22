@@ -30,6 +30,16 @@ class Article extends Model
         'data_publicacao' => 'datetime',
     ];
 
+    public function toSearchableArray(): array
+    {
+        return [
+            'autor' => $this->autor,
+            'orientador' => $this->orientador,
+            'data_publicacao' => $this->data_publicacao,
+            'titulo' => $this->titulo,
+        ];
+    }
+
     protected static function newFactory()
     {
         return ArticleFactory::new();
