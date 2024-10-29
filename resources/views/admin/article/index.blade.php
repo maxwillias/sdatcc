@@ -16,46 +16,45 @@
     </x-slot>
 
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-4">
-        <form action="{{ route('admin.article.search') }}">
-            <div class="flex items-center w-full max-w-4xl space-x-4 bg-gray-100 p-4 rounded-lg">
-                <input type="text" name="titulo" placeholder="Titulo" class="flex-grow px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                <input type="text" name="autor" placeholder="Autor" class="flex-grow px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                <input type="text" name="orientador" placeholder="Orientador" class="flex-grow px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                <input type="date" name="inicial_data" placeholder="Data Inicial" class="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                <input type="date" name="final_data" placeholder="Data Final" class="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+        <div class="bg-white dark:bg-gray-800 overflow-hidden p-4 shadow-sm sm:rounded-lg border-solid border-2 border-[#5ACC58]">
+            <b>Filtros</b>
+            <form action="{{ route('admin.article.search') }}">
+                <div class="flex items-center w-full space-x-4 bg-gray-100 p-4 rounded-lg">
+                    <input type="text" name="titulo" placeholder="Titulo" class="flex-grow px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <input type="text" name="autor" placeholder="Autor" class="flex-grow px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <input type="text" name="orientador" placeholder="Orientador" class="flex-grow px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <input type="date" name="inicial_data" placeholder="Data Inicial" class="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <input type="date" name="final_data" placeholder="Data Final" class="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
 
-                <button class="flex-grow bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none">
-                Buscar
-                </button>
-            </div>
-        </form>
+                    <button class="flex-grow bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded-lg">
+                    Buscar
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
 
     <div>
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-4">
-            {{ $items->appends(request()->input())->links() }}
-        </div>
         @foreach ($items as $item)
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-4">
-                <div class="bg-white dark:bg-gray-800 overflow-hidden p-4 shadow-sm sm:rounded-lg border-solid border-2 border-[#5ACC58]">
-                    <b>Artigos</b>
+                <div class="bg-white overflow-hidden p-4 shadow-sm sm:rounded-lg border-solid border-2 border-[#5ACC58]">
                     <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-2">
-                        <table class="w-full text-sm text-left rtl:text-right text-gray-700 dark:text-gray-400">
-                            <thead class="text-xs text-white uppercase bg-[#5ACC58] dark:bg-gray-700 dark:text-gray-400">
+                        <table class="w-full text-sm text-left rtl:text-right text-gray-700">
+                            <thead class="text-xs text-white uppercase bg-[#5ACC58]">
                                 <tr>
-                                    <th scope="col" class="px-6 py-3">
+                                    <th scope="col" class="px-6 py-3 text-start">
                                         Título
                                     </th>
-                                    <th scope="col" class="px-6 py-3">
+                                    <th scope="col" class="px-6 py-3 text-center">
                                         Autor
                                     </th>
-                                    <th scope="col" class="px-6 py-3">
+                                    <th scope="col" class="px-6 py-3 text-center">
                                         Orientador
                                     </th>
-                                    <th scope="col" class="px-6 py-3">
+                                    <th scope="col" class="px-6 py-3 text-center">
                                         Data de publicação
                                     </th>
-                                    <th scope="col" class="px-6 py-3">
+                                    <th scope="col" class="px-6 py-3 text-center">
                                         Ações
                                     </th>
                                 </tr>
@@ -63,20 +62,20 @@
                             <tbody>
                                 <tr
                                     class="bg-[#CCCFD4] h-[100px] border-b dark:bg-gray-800 dark:border-gray-700 text-gray-900">
-                                    <td scope="row" class="px-6 py-4 font-medium whitespace-nowrap dark:text-white">
+                                    <td class="px-6 py-4 text-start whitespace-normal w-[400px]">
                                         {{ $item->titulo }}
                                     </td>
-                                    <td class="px-6 py-4">
+                                    <td class="px-6 py-4 text-center w-[150px]">
                                         {{ $item->autor }}
                                     </td>
-                                    <td class="px-6 py-4">
+                                    <td class="px-6 py-4 text-center w-[150px]">
                                         {{ $item->orientador }}
                                     </td>
-                                    <td class="px-6 py-4">
+                                    <td class="px-6 py-4 text-center">
                                         {{ $item->data_publicacao->translatedFormat('j \\d\\e F \\d\\e Y') }}
                                     </td>
-                                    <td class="px-6 py-4">
-                                        <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown{{ $item->id }}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Mais <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <td class="px-6 py-4 text-center">
+                                        <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown{{ $item->id }}" class="text-white bg-blue-700 hover:bg-blue-800 rounded-lg text-sm px-5 py-2 text-center inline-flex items-center" type="button">Mais <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                                             </svg>
                                         </button>
