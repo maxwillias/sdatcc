@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\ArticleController as AdminArticleController;
 use App\Http\Controllers\Admin\ArticleSearchableController as AdminArticleSearchableController;
 use App\Http\Controllers\Admin\FinalProjectController as AdminFinalProjectController;
 use App\Http\Controllers\Admin\FinalProjectSearchableController as AdminFinalProjectSearchableController;
+use App\Http\Controllers\Admin\AdvisorController;
 use App\Http\Controllers\User\ArticleController;
 use App\Http\Controllers\User\FinalProjectController;
 use App\Http\Controllers\ProfileController;
@@ -21,6 +22,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::prefix('admin')->group(function () {
             Route::resource('final-projects', AdminFinalProjectController::class)->except(['show']);
             Route::resource('articles', AdminArticleController::class)->except(['show']);
+            Route::resource('advisors', AdvisorController::class)->except(['show']);
             Route::get('/final-projects/search', AdminFinalProjectSearchableController::class)->name('project.search');
             Route::get('/articles/search', AdminArticleSearchableController::class)->name('article.search');
         });
