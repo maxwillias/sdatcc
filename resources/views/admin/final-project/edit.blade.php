@@ -35,7 +35,7 @@
                     <!-- Data de Publicação -->
                     <div class="mb-4">
                         <label for="data_publicacao" class="block text-sm font-medium text-gray-700">Data de Publicação</label>
-                        <input type="date" id="data_publicacao" name="data_publicacao" value="{{ $item->data_publicacao }}" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                        <input type="date" id="data_publicacao" name="data_publicacao" value="{{ $item->data_publicacao->format('Y-m-d') }}" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
                     </div>
 
                     <!-- Arquivo -->
@@ -46,7 +46,7 @@
 
                     <!-- Botão de Submissão -->
                     <div>
-                        <button type="submit" class="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Criar TCC</button>
+                        <button type="submit" class="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Salvar</button>
                     </div>
                 </form>
             </div>
