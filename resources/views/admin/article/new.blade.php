@@ -25,12 +25,6 @@
                         <input type="text" id="titulo" name="titulo" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
                     </div>
 
-                    <!-- Resumo -->
-                    <div class="mb-4">
-                        <label for="resumo" class="block text-sm font-medium text-gray-700">Resumo</label>
-                        <textarea id="resumo" name="resumo" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required></textarea>
-                    </div>
-
                     <!-- Data de Publicação -->
                     <div class="mb-4">
                         <label for="data_publicacao" class="block text-sm font-medium text-gray-700">Data de Publicação</label>

@@ -24,7 +24,6 @@ class ArticleFactory extends Factory
             'orientador' => fake()->name(),
             'titulo' => fake()->sentence(),
             'data_publicacao' => fake()->date(),
-            'resumo' => fake()->text(),
         ];
     }
 }

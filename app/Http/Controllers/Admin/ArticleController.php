@@ -45,7 +45,6 @@ class ArticleController extends Controller
             'titulo' => $data['titulo'],
             'arquivo_nome' => $arquivo_nome,
             'arquivo_path' => $arquivo_path,
-            'resumo' => $data['resumo'],
         ]);
 
         return to_route('admin.articles.index')->with('success', 'O Artigo foi salvo com sucesso.');
@@ -80,7 +79,6 @@ class ArticleController extends Controller
                 'titulo' => $data['titulo'],
                 'arquivo_nome' => $arquivo_nome,
                 'arquivo_path' => $arquivo_path,
-                'resumo' => $data['resumo'],
             ]);
         }else{
             $article->updateOrFail([
@@ -88,7 +86,6 @@ class ArticleController extends Controller
                 'orientador' => $data['orientador'],
                 'data_publicacao' => $data['data_publicacao'],
                 'titulo' => $data['titulo'],
-                'resumo' => $data['resumo'],
             ]);
         }
         return to_route('admin.articles.index')->with('success', 'O Artigo foi atualizado com sucesso.');

@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('titulo');
             $table->string('arquivo_nome')->nullable();
             $table->string('arquivo_path')->nullable();
-            $table->text('resumo')->nullable();
             $table->date('data_publicacao')->nullable();
             $table->timestamps();
             $table->softDeletes();

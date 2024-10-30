@@ -45,7 +45,6 @@ class FinalProjectController extends Controller
             'titulo' => $data['titulo'],
             'arquivo_nome' => $arquivo_nome,
             'arquivo_path' => $arquivo_path,
-            'resumo' => $data['resumo'],
         ]);
 
         return to_route('admin.final-projects.index')->with('success', 'O TCC foi salvo com sucesso.');
@@ -80,7 +79,6 @@ class FinalProjectController extends Controller
                 'titulo' => $data['titulo'],
                 'arquivo_nome' => $arquivo_nome,
                 'arquivo_path' => $arquivo_path,
-                'resumo' => $data['resumo'],
             ]);
         }else{
             $final_project->updateOrFail([
@@ -88,7 +86,6 @@ class FinalProjectController extends Controller
                 'orientador' => $data['orientador'],
                 'data_publicacao' => $data['data_publicacao'],
                 'titulo' => $data['titulo'],
-                'resumo' => $data['resumo'],
             ]);
         }
         return to_route('admin.final-projects.index')->with('success', 'O TCC foi atualizado com sucesso.');

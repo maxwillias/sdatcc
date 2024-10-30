@@ -23,7 +23,6 @@ class FinalProject extends Model
         'titulo',
         'arquivo_nome',
         'arquivo_path',
-        'resumo',
     ];
 
     protected $casts = [
