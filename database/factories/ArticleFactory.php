@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Advisor;
 use App\Models\Article;
+use App\Models\Student;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -20,8 +22,8 @@ class ArticleFactory extends Factory
     public function definition(): array
     {
         return [
-            'autor' => fake()->name(),
-            'orientador' => fake()->name(),
+            'aluno_id' => Student::inRandomOrder()->first()->id,
+            'orientador_id' => Advisor::inRandomOrder()->first()->id,
             'titulo' => fake()->sentence(),
             'data_publicacao' => fake()->date(),
         ];

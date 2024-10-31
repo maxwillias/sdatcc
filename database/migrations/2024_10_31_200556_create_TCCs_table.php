@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Artigos', function (Blueprint $table) {
+        Schema::create('TCCs', function (Blueprint $table) {
             $table->id();
-            $table->string('autor');
-            $table->string('orientador');
+            $table->foreignId('aluno_id')->constrained('Alunos');
+            $table->foreignId('orientador_id')->constrained('Orientadores');
             $table->string('titulo');
             $table->string('arquivo_nome')->nullable();
             $table->string('arquivo_path')->nullable();
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('Artigos');
+        Schema::dropIfExists('TCCs');
     }
 };

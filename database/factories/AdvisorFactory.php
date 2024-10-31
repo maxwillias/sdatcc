@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Advisor;
+use App\Models\Course;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -21,7 +22,7 @@ class AdvisorFactory extends Factory
     {
         return [
             'nome' => fake()->name(),
-            'curso' => fake()->text(),
+            'curso_id' => Course::inRandomOrder()->first()->id,
         ];
     }
 }
