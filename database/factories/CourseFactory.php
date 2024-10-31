@@ -18,7 +18,7 @@ class CourseFactory extends Factory
     {
         return [
             'nome' => fake()->name(),
-            'sigla' => strtoupper(fake()->lexify('???')),
+            'sigla' => strtoupper(fake()->lexify('????')),
         ];
     }
 }
