@@ -29,7 +29,10 @@ class FinalProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.final-project.new');
+        $students = Student::search()->get();
+        $advisors = Advisor::search()->get();
+
+        return view('admin.final-project.new', compact('students', 'advisors'));
     }
 
     /**
@@ -59,7 +62,10 @@ class FinalProjectController extends Controller
      */
     public function edit(FinalProject $final_project)
     {
-        return view('admin.final-project.edit', ['item' => $final_project]);
+        $students = Student::search()->get();
+        $advisors = Advisor::search()->get();
+
+        return view('admin.final-project.edit', ['item' => $final_project, 'students' => $students, 'advisors' => $advisors]);
     }
 
     /**

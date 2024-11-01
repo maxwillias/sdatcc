@@ -26,7 +26,9 @@ class AdvisorController extends Controller
      */
     public function create()
     {
-        return view('admin.advisor.new');
+        $courses = Course::search()->get();
+
+        return view('admin.advisor.new', compact('courses'));
     }
 
     /**
@@ -49,7 +51,9 @@ class AdvisorController extends Controller
      */
     public function edit(Advisor $advisor)
     {
-        return view('admin.advisor.edit', ['item' => $advisor]);
+        $courses = Course::search()->get();
+
+        return view('admin.advisor.edit', ['item' => $advisor, 'courses' => $courses]);
     }
 
     /**

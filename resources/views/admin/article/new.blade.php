@@ -9,14 +9,24 @@
 
                     <!-- Autor -->
                     <div class="mb-4">
-                        <label for="autor" class="block text-sm font-medium text-gray-700">Autor</label>
-                        <input type="text" id="autor" name="autor" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                        <label for="autor" class="block mb-1 text-sm font-medium text-gray-700">Autor</label>
+                        <select class="w-full border select2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 py-2 px-4">
+                            <option value="" disabled selected>Selecione o autor</option>
+                            @foreach ($students as $student)
+                                <option value="{{ $student->id }}">{{ $student->nome }}</option>
+                            @endforeach
+                        </select>
                     </div>
 
                     <!-- Orientador -->
                     <div class="mb-4">
-                        <label for="orientador" class="block text-sm font-medium text-gray-700">Orientador</label>
-                        <input type="text" id="orientador" name="orientador" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                        <label for="orientador" class="block mb-1 text-sm font-medium text-gray-700">Orientador</label>
+                        <select class="w-full border select2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 py-2 px-4">
+                            <option value="" disabled selected>Selecione o orientador</option>
+                            @foreach ($advisors as $advisor)
+                                <option value="{{ $advisor->id }}">{{ $advisor->nome }}</option>
+                            @endforeach
+                        </select>
                     </div>
 
                     <!-- Título -->

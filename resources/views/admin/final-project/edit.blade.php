@@ -10,14 +10,24 @@
 
                     <!-- Aluno -->
                     <div class="mb-4">
-                        <label for="aluno" class="block text-sm font-medium text-gray-700">Aluno</label>
-                        <input type="text" id="aluno" name="aluno" value="{{ $item->aluno }}" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                        <label for="aluno" class="block mb-1 text-sm font-medium text-gray-700">Aluno</label>
+                        <select class="w-full border select2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 py-2 px-4">
+                            <option value="{{ $item->aluno->id }}" selected>{{ $item->aluno->nome }}</option>
+                            @foreach ($students as $student)
+                                <option value="{{ $student->id }}">{{ $student->nome }}</option>
+                            @endforeach
+                        </select>
                     </div>
 
                     <!-- Orientador -->
                     <div class="mb-4">
-                        <label for="orientador" class="block text-sm font-medium text-gray-700">Orientador</label>
-                        <input type="text" id="orientador" name="orientador" value="{{ $item->orientador }}" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                        <label for="orientador" class="block mb-1 text-sm font-medium text-gray-700">Orientador</label>
+                        <select class="w-full border select2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 py-2 px-4">
+                            <option value="{{ $item->orientador->id }}" selected>{{ $item->orientador->nome }}</option>
+                            @foreach ($advisors as $advisor)
+                                <option value="{{ $advisor->id }}">{{ $advisor->nome }}</option>
+                            @endforeach
+                        </select>
                     </div>
 
                     <!-- Título -->

@@ -29,7 +29,10 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('admin.article.new');
+        $students = Student::search()->get();
+        $advisors = Advisor::search()->get();
+
+        return view('admin.article.new', compact('students', 'advisors'));
     }
 
     /**
@@ -59,7 +62,10 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        return view('admin.article.edit', ['item' => $article]);
+        $students = Student::search()->get();
+        $advisors = Advisor::search()->get();
+
+        return view('admin.article.edit', ['item' => $article, 'students' => $students, 'advisors' => $advisors]);
     }
 
     /**

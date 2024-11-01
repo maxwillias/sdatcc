@@ -26,7 +26,9 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('admin.student.new');
+        $courses = Course::search()->get();
+
+        return view('admin.student.new', compact('courses'));
     }
 
     /**
@@ -49,7 +51,9 @@ class StudentController extends Controller
      */
     public function edit(Student $student)
     {
-        return view('admin.student.edit', ['item' => $student]);
+        $courses = Course::search()->get();
+
+        return view('admin.student.edit', ['item' => $student, 'courses' => $courses]);
     }
 
     /**
