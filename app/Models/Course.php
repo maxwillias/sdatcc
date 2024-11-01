@@ -21,6 +21,16 @@ class Course extends Model
         'sigla',
     ];
 
+    public function advisors()
+    {
+        return $this->hasMany(Advisor::class);
+    }
+
+    public function students()
+    {
+        return $this->hasMany(Student::class);
+    }
+
     protected static function newFactory()
     {
         return CourseFactory::new();

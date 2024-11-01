@@ -22,7 +22,7 @@ class ArticleFactory extends Factory
     public function definition(): array
     {
         return [
-            'aluno_id' => Student::inRandomOrder()->first()->id,
+            'autor_id' => Student::inRandomOrder()->first()->id,
             'orientador_id' => Advisor::inRandomOrder()->first()->id,
             'titulo' => fake()->sentence(),
             'data_publicacao' => fake()->date(),

@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreFinalProjectRequest;
 use App\Http\Requests\UpdateFinalProjectRequest;
+use App\Models\Advisor;
 use App\Models\FinalProject;
+use App\Models\Student;
 use Illuminate\Support\Facades\Storage;
 
 class FinalProjectController extends Controller
@@ -16,8 +18,10 @@ class FinalProjectController extends Controller
     public function index()
     {
         $items = FinalProject::search()->paginate(10);
+        $students = Student::search()->get();
+        $advisors = Advisor::search()->get();
 
-        return view('admin.final-project.index', compact('items'));
+        return view('admin.final-project.index', compact('items', 'students', 'advisors'));
     }
 
     /**

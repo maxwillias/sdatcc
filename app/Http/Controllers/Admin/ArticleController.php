@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreArticleRequest;
 use App\Http\Requests\UpdateArticleRequest;
+use App\Models\Advisor;
 use App\Models\Article;
+use App\Models\Student;
 use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
@@ -16,8 +18,10 @@ class ArticleController extends Controller
     public function index()
     {
         $items = Article::search()->paginate(10);
+        $students = Student::search()->get();
+        $advisors = Advisor::search()->get();
 
-        return view('admin.article.index', compact('items'));
+        return view('admin.article.index', compact('items', 'students', 'advisors'));
     }
 
     /**

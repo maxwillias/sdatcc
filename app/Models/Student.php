@@ -18,8 +18,23 @@ class Student extends Model
 
     protected $fillable = [
         'nome',
-        'curso',
+        'curso_id',
     ];
+
+    public function finalProject()
+    {
+        return $this->hasOne(FinalProject::class);
+    }
+
+    public function articles()
+    {
+        return $this->hasMany(Article::class);
+    }
+
+    public function curso()
+    {
+        return $this->belongsTo(Course::class);
+    }
 
     protected static function newFactory()
     {

@@ -18,8 +18,23 @@ class Advisor extends Model
 
     protected $fillable = [
         'nome',
-        'curso',
+        'curso_id',
     ];
+
+    public function finalProjects()
+    {
+        return $this->hasMany(FinalProject::class);
+    }
+
+    public function articles()
+    {
+        return $this->hasMany(Article::class);
+    }
+
+    public function curso()
+    {
+        return $this->belongsTo(Course::class);
+    }
 
     protected static function newFactory()
     {

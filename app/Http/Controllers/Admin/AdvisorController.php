@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreAdvisorRequest;
 use App\Http\Requests\UpdateAdvisorRequest;
 use App\Models\Advisor;
+use App\Models\Course;
 
 class AdvisorController extends Controller
 {
@@ -15,8 +16,9 @@ class AdvisorController extends Controller
     public function index()
     {
         $items = Advisor::search()->paginate(10);
+        $courses = Course::search()->get();
 
-        return view('admin.advisor.index', compact('items'));
+        return view('admin.advisor.index', compact('items', 'courses'));
     }
 
     /**

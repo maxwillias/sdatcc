@@ -21,7 +21,14 @@
             <form action="{{ route('admin.article.search') }}">
                 <div class="flex items-center w-full space-x-4 bg-gray-100 p-4 rounded-lg">
                     <input type="text" name="nome" placeholder="Nome" class="flex-grow px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                    <input type="text" name="curso" placeholder="Curso" class="flex-grow px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <div class="w-1/2">
+                        <select class="w-full border select2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 py-2 px-4">
+                            <option value="" disabled selected>Selecione o curso</option>
+                            @foreach ($courses as $course)
+                                <option value="{{ $course->id }}">{{ $course->nome }}</option>
+                            @endforeach
+                        </select>
+                    </div>
 
                     <button class="flex-grow bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded-lg">
                     Buscar
@@ -57,7 +64,7 @@
                                         {{ $item->nome }}
                                     </td>
                                     <td class="px-6 py-4 text-center w-[400px]">
-                                        {{ $item->curso }}
+                                        {{ $item->curso->nome }}
                                     </td>
                                     <td class="px-6 py-4 text-center">
                                         <div class="flex flex-col items-center">

@@ -17,8 +17,8 @@ class FinalProject extends Model
     protected $table = 'TCCs';
 
     protected $fillable = [
-        'aluno',
-        'orientador',
+        'aluno_id',
+        'orientador_id',
         'data_publicacao',
         'titulo',
         'arquivo_nome',
@@ -32,11 +32,19 @@ class FinalProject extends Model
     public function toSearchableArray(): array
     {
         return [
-            'aluno' => $this->aluno,
-            'orientador' => $this->orientador,
             'data_publicacao' => $this->data_publicacao,
             'titulo' => $this->titulo,
         ];
+    }
+
+    public function aluno()
+    {
+        return $this->belongsTo(Student::class);
+    }
+
+    public function orientador()
+    {
+        return $this->belongsTo(Advisor::class);
     }
 
     protected static function newFactory()

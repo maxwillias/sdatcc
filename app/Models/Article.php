@@ -17,8 +17,8 @@ class Article extends Model
     protected $table = 'Artigos';
 
     protected $fillable = [
-        'autor',
-        'orientador',
+        'autor_id',
+        'orientador_id',
         'data_publicacao',
         'titulo',
         'arquivo_nome',
@@ -32,11 +32,19 @@ class Article extends Model
     public function toSearchableArray(): array
     {
         return [
-            'autor' => $this->autor,
-            'orientador' => $this->orientador,
             'data_publicacao' => $this->data_publicacao,
             'titulo' => $this->titulo,
         ];
+    }
+
+    public function autor()
+    {
+        return $this->belongsTo(Student::class);
+    }
+
+    public function orientador()
+    {
+        return $this->belongsTo(Advisor::class);
     }
 
     protected static function newFactory()

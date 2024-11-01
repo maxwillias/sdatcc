@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreStudentRequest;
 use App\Http\Requests\UpdateStudentRequest;
+use App\Models\Course;
 use App\Models\Student;
 
 class StudentController extends Controller
@@ -15,8 +16,9 @@ class StudentController extends Controller
     public function index()
     {
         $items = Student::search()->paginate(10);
+        $courses = Course::search()->get();
 
-        return view('admin.student.index', compact('items'));
+        return view('admin.student.index', compact('items', 'courses'));
     }
 
     /**
