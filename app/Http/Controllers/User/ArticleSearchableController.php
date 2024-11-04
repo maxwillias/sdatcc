@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\FIlters\ByAdvisor;
-use App\Http\Controllers\FIlters\ByAuthor;
-use App\Http\Controllers\FIlters\ByDate;
-use App\Http\Controllers\FIlters\ByTitle;
+use App\Http\Controllers\Filters\ByAdvisor;
+use App\Http\Controllers\Filters\ByAuthor;
+use App\Http\Controllers\Filters\ByDate;
+use App\Http\Controllers\Filters\ByTitle;
 use App\Models\Advisor;
 use App\Models\Article;
 use App\Models\Student;

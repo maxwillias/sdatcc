@@ -5,8 +5,11 @@ use App\Http\Controllers\Admin\ArticleSearchableController as AdminArticleSearch
 use App\Http\Controllers\Admin\FinalProjectController as AdminFinalProjectController;
 use App\Http\Controllers\Admin\FinalProjectSearchableController as AdminFinalProjectSearchableController;
 use App\Http\Controllers\Admin\AdvisorController;
+use App\Http\Controllers\Admin\AdvisorSearchableController;
 use App\Http\Controllers\Admin\StudentController;
-use App\Http\Controllers\CourseController;
+use App\Http\Controllers\Admin\CourseController;
+use App\Http\Controllers\Admin\CourseSearchableController;
+use App\Http\Controllers\Admin\StudentSearchableController;
 use App\Http\Controllers\User\ArticleController;
 use App\Http\Controllers\User\FinalProjectController;
 use App\Http\Controllers\ProfileController;
@@ -29,6 +32,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
             Route::resource('courses', CourseController::class)->except(['show']);
             Route::get('/final-projects/search', AdminFinalProjectSearchableController::class)->name('project.search');
             Route::get('/articles/search', AdminArticleSearchableController::class)->name('article.search');
+            Route::get('/students/search', StudentSearchableController::class)->name('student.search');
+            Route::get('/advisors/search', AdvisorSearchableController::class)->name('advisor.search');
+            Route::get('/courses/search', CourseSearchableController::class)->name('course.search');
         });
     });
 });

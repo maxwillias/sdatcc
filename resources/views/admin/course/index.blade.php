@@ -18,10 +18,10 @@
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-4">
         <div class="bg-white dark:bg-gray-800 overflow-hidden p-4 shadow-sm sm:rounded-lg border-solid border-2 border-[#5ACC58]">
             <b>Filtros</b>
-            <form action="{{ route('admin.article.search') }}">
+            <form action="{{ route('admin.course.search') }}">
                 <div class="flex items-center w-full space-x-4 bg-gray-100 p-4 rounded-lg">
-                    <input type="text" name="nome" placeholder="Nome" class="flex-grow px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                    <input type="text" name="sigla" placeholder="Sigla" class="flex-grow px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <input type="text" name="curso_nome" placeholder="Nome" class="flex-grow px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <input type="text" name="sigla" maxlength="4" placeholder="Sigla" class="flex-grow px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
 
                     <button class="flex-grow bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded-lg">
                     Buscar
