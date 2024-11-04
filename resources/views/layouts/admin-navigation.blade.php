@@ -18,31 +18,31 @@
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('admin.final-projects.index')" :active="request()->routeIs('admin.final-projects.index')">
+                    <x-nav-link :href="route('admin.final-projects.index')" :active="request()->routeIs('admin.final-projects.index') || request()->routeIs('admin.project.search')">
                         Trabalhos de conclusão de curso
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('admin.articles.index')" :active="request()->routeIs('admin.articles.index')">
+                    <x-nav-link :href="route('admin.articles.index')" :active="request()->routeIs('admin.articles.index') || request()->routeIs('admin.article.search')">
                         Artigos
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('admin.advisors.index')" :active="request()->routeIs('admin.advisors.index')">
+                    <x-nav-link :href="route('admin.advisors.index')" :active="request()->routeIs('admin.advisors.index') || request()->routeIs('admin.advisor.search')">
                         Orientadores
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('admin.students.index')" :active="request()->routeIs('admin.students.index')">
+                    <x-nav-link :href="route('admin.students.index')" :active="request()->routeIs('admin.students.index') || request()->routeIs('admin.student.search')">
                         Alunos
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('admin.courses.index')" :active="request()->routeIs('admin.courses.index')">
+                    <x-nav-link :href="route('admin.courses.index')" :active="request()->routeIs('admin.courses.index') || request()->routeIs('admin.course.search')">
                         Cursos
                     </x-nav-link>
                 </div>

@@ -20,10 +20,14 @@
             <b>Filtros</b>
             <form action="{{ route('admin.advisor.search') }}">
                 <div class="flex items-center w-full space-x-4 bg-gray-100 p-4 rounded-lg">
-                    <input name="orientador_nome" type="text" name="nome" placeholder="Nome" class="flex-grow px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <input name="orientador_nome" value="{{ request()->orientador_nome ?? null }}" type="text" name="nome" placeholder="Nome" class="flex-grow px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                     <div class="w-1/2">
                         <select name="curso" class="w-full border select2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 py-2 px-4">
-                            <option value="" disabled selected>Selecione o curso</option>
+                            @if (request()->curso)
+                                <option value="{{ request()->curso }}" selected>{{ $courses->firstWhere('id', request()->curso)->nome }}</option>
+                            @else
+                                <option value="" disabled selected>Selecione o curso</option>
+                            @endif
                             @foreach ($courses as $course)
                                 <option value="{{ $course->id }}">{{ $course->nome }}</option>
                             @endforeach

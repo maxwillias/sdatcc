@@ -20,10 +20,14 @@
             <b>Filtros</b>
             <form action="{{ route('admin.project.search') }}">
                 <div class="flex items-center w-full space-x-4 bg-gray-100 p-4 rounded-lg">
-                    <input type="text" name="titulo" placeholder="Titulo" class="flex-grow px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <input type="text" value="{{ request()->titulo ?? null }}" name="titulo" placeholder="Titulo" class="flex-grow px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                     <div class="w-1/2">
                         <select name="aluno" class="w-full border select2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 py-2 px-4">
-                            <option value="" disabled selected>Selecione o aluno</option>
+                            @if (request()->aluno)
+                                <option value="{{ request()->aluno }}" selected>{{ $students->firstWhere('id', request()->aluno)->nome }}</option>
+                            @else
+                                <option value="" disabled selected>Selecione o aluno</option>
+                            @endif
                             @foreach ($students as $student)
                                 <option value="{{ $student->id }}">{{ $student->nome }}</option>
                             @endforeach
@@ -31,27 +35,31 @@
                     </div>
                     <div class="w-1/2">
                         <select name="orientador" class="w-full border select2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 py-2 px-4">
-                            <option value="" disabled selected>Selecione o orientador</option>
+                            @if (request()->orientador)
+                                <option value="{{ request()->orientador }}" selected>{{ $advisors->firstWhere('id', request()->orientador)->nome }}</option>
+                            @else
+                                <option value="" disabled selected>Selecione o orientador</option>
+                            @endif
                             @foreach ($advisors as $advisor)
                                 <option value="{{ $advisor->id }}">{{ $advisor->nome }}</option>
                             @endforeach
                         </select>
                     </div>
                     <div class="relative">
-                        <input type="date" name="inicial_data" class="block px-2.5 pb-2.5 pt-4 w-full text-sm bg-white text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"/>
+                        <input type="date" value="{{ request()->inicial_data ?? null }}" name="inicial_data" class="block px-2.5 pb-2.5 pt-4 w-full text-sm bg-white text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"/>
                         <label class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 left-2.5">
                             Data de inicio
                         </label>
                     </div>
                     <div class="relative">
-                        <input name="final_data" type="date" class="block px-2.5 pb-2.5 pt-4 w-full text-sm bg-white text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"/>
+                        <input name="final_data" value="{{ request()->final_data ?? null }}" type="date" class="block px-2.5 pb-2.5 pt-4 w-full text-sm bg-white text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"/>
                         <label class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 left-2.5">
                             Data final
                         </label>
                     </div>
 
                     <button class="flex-grow bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded-lg">
-                    Buscar
+                        Buscar
                     </button>
                 </div>
             </form>
