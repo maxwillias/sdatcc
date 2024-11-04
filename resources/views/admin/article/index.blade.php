@@ -22,15 +22,15 @@
                 <div class="flex items-center w-full space-x-4 bg-gray-100 p-4 rounded-lg">
                     <input type="text" name="titulo" placeholder="Titulo" class="flex-grow px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                     <div class="w-1/2">
-                        <select class="w-full border select2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 py-2 px-4">
-                            <option value="" disabled selected>Selecione o aluno</option>
+                        <select name="autor" class="w-full border select2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 py-2 px-4">
+                            <option value="" disabled selected>Selecione o autor</option>
                             @foreach ($students as $student)
                                 <option value="{{ $student->id }}">{{ $student->nome }}</option>
                             @endforeach
                         </select>
                     </div>
                     <div class="w-1/2">
-                        <select class="w-full border select2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 py-2 px-4">
+                        <select name="orientador" class="w-full border select2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 py-2 px-4">
                             <option value="" disabled selected>Selecione o orientador</option>
                             @foreach ($advisors as $advisor)
                                 <option value="{{ $advisor->id }}">{{ $advisor->nome }}</option>

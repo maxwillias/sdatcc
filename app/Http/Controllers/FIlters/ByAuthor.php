@@ -18,7 +18,7 @@ final readonly class ByAuthor
         return $next($builder)
             ->when(
                 $this->request->get('autor'),
-                fn ($query) => $query->where('autor', $this->request->autor)
+                fn ($query) => $query->where('autor_id', $this->request->autor)
             );
     }
 }

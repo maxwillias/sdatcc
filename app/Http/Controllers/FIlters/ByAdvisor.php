@@ -18,7 +18,7 @@ final readonly class ByAdvisor
         return $next($builder)
             ->when(
                 $this->request->get('orientador'),
-                fn ($query) => $query->where('orientador', $this->request->orientador)
+                fn ($query) => $query->where('orientador_id', $this->request->orientador)
             );
     }
 }

@@ -4,3 +4,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.select2-results__option {
+	@apply p-1 select-none;
+}
+
+.select2-container--open .select2-dropdown {
+	@apply mt-1 left-0;
+}
+
+.select2-search--dropdown {
+	@apply block p-2;
+}
+
+.select2-container--default .select2-selection--single {
+	@apply p-2 h-10 bg-white border border-gray-300 rounded-lg;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    @apply text-gray-700;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    @apply absolute right-0 top-0 h-10 w-8;
+}
+
+.select2-container--default .select2-results > .select2-results__options {
+	@apply h-full max-h-32 overflow-y-auto text-gray-900;
+}
+
+.select2-container--default .select2-results__option[aria-disabled=true] {
+	@apply text-gray-700;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+	@apply bg-gray-100 text-gray-700;
+}

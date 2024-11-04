@@ -18,7 +18,7 @@ final readonly class ByStudent
         return $next($builder)
             ->when(
                 $this->request->get('aluno'),
-                fn ($query) => $query->where('aluno', $this->request->aluno)
+                fn ($query) => $query->where('aluno_id', $this->request->aluno)
             );
     }
 }
