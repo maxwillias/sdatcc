@@ -35,7 +35,7 @@
     </body>
     <footer class="bg-gray-200 text-gray-700 py-4">
         <div class="container mx-auto flex justify-center text-sm">
-            <p>Desenvolvido por <a class="text-blue-700 underline" href="https://github.com/maxwillias">Willas Júnior Farias de Souza</a> em 2024</p>
+            <p>Desenvolvido por <a class="text-blue-700 underline" target="_blank" href="https://github.com/maxwillias">Willas Júnior Farias de Souza</a> em 2024</p>
         </div>
     </footer>
 </html>
