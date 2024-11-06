@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\CourseSearchableController;
 use App\Http\Controllers\Admin\StudentSearchableController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\User\ArticleController;
 use App\Http\Controllers\User\FinalProjectController;
 use App\Http\Controllers\ProfileController;
@@ -35,6 +36,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
             Route::get('/students/search', StudentSearchableController::class)->name('student.search');
             Route::get('/advisors/search', AdvisorSearchableController::class)->name('advisor.search');
             Route::get('/courses/search', CourseSearchableController::class)->name('course.search');
+            Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+            Route::get('dashboard/chart-project', [DashboardController::class, 'chartProjects'])->name('dashboard.chart-project');
+            Route::get('dashboard/chart-article', [DashboardController::class, 'chartArticles'])->name('dashboard.chart-article');
         });
     });
 });
@@ -56,10 +60,6 @@ Route::group(['as' => 'user.'], function () {
 Route::get('/', function () {
     return to_route('user.final-projects.index');
 });
-
-Route::get('/dashboard', function () {
-    return view('admin.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

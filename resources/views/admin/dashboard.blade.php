@@ -1,15 +1,51 @@
 <x-admin-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <a href="{{ route('admin.final-projects.create') }}" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700"> Novo TCC</a>
-            <a href="{{ route('admin.articles.create') }}" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700"> Novo Artigo</a>
+    <div class="max-w-7xl mx-auto my-6 grid grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-4 max-xl:px-4">
+        <div class="flex bg-blue-700 text-white rounded-md">
+            <div class="bg-blue-800 pb-4 pt-6 px-4 rounded-l-md">
+                <i class="fa-solid fa-file-lines text-3xl"></i>
+            </div>
+            <div class="py-2 px-4">
+                <p class="text-sm">TCCs</p>
+                <p>
+                    <strong class="text-2xl leading-6">49</strong>
+                </p>
+            </div>
+        </div>
+        <div class="flex bg-orange-400 text-white rounded-md">
+            <div class="bg-orange-500 pb-4 pt-6 px-4 rounded-l-md">
+                <i class="fa-solid fa-pause text-3xl"></i>
+            </div>
+            <div class="py-2 px-4">
+                <p class="text-sm">Artigos</p>
+                <p>
+                    <strong class="text-2xl leading-6">50</strong>
+                </p>
+            </div>
+        </div>
+        <div class="flex bg-green-600 text-white rounded-md">
+            <div class="bg-green-700 pb-4 pt-6 px-4 rounded-l-md">
+                <i class="fa-solid fa-check text-3xl"></i>
+            </div>
+            <div class="py-2 px-4">
+                <p class="text-sm">Cursos</p>
+                <p>
+                    <strong class="text-2xl leading-6">20</strong>
+                </p>
+            </div>
         </div>
     </div>
 
+    <div class="flex max-w-7xl mx-auto gap-x-4 max-xl:px-4 max-lg:flex-wrap">
+        <div class="mx-auto h-[300px] my-1 w-1/2 max-lg:w-full bg-white shadow-md rounded">
+            <canvas id="myChart"></canvas>
+        </div>
+        <div class="mx-auto h-[300px] flex justify-center items-center my-1 w-1/2 max-lg:w-full bg-white shadow-md rounded">
+            <canvas id="myCharts"></canvas>
+        </div>
+    </div>
+
+
+    @push('last_js')
+        @vite(['resources/js/charts.js'])
+    @endpush
 </x-admin-layout>

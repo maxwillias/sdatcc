@@ -31,6 +31,16 @@ class Course extends Model
         return $this->hasMany(Student::class);
     }
 
+    public function projects()
+    {
+        return $this->hasMany(FinalProject::class, 'curso_id');
+    }
+
+    public function articles()
+    {
+        return $this->hasMany(Article::class, 'curso_id');
+    }
+
     protected static function newFactory()
     {
         return CourseFactory::new();

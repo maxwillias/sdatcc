@@ -19,6 +19,7 @@ class FinalProject extends Model
     protected $fillable = [
         'aluno_id',
         'orientador_id',
+        'curso_id',
         'data_publicacao',
         'titulo',
         'arquivo_nome',
@@ -40,6 +41,11 @@ class FinalProject extends Model
     public function aluno()
     {
         return $this->belongsTo(Student::class);
+    }
+
+    public function curso()
+    {
+        return $this->belongsTo(Course::class);
     }
 
     public function orientador()

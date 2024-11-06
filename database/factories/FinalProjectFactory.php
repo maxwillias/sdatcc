@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Advisor;
+use App\Models\Course;
 use App\Models\FinalProject;
 use App\Models\Student;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -24,6 +25,7 @@ class FinalProjectFactory extends Factory
         return [
             'aluno_id' => Student::inRandomOrder()->first()->id,
             'orientador_id' => Advisor::inRandomOrder()->first()->id,
+            'curso_id' => Course::inRandomOrder()->first()->id,
             'titulo' => fake()->sentence(),
             'data_publicacao' => fake()->date(),
         ];

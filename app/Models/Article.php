@@ -19,6 +19,7 @@ class Article extends Model
     protected $fillable = [
         'autor_id',
         'orientador_id',
+        'curso_id',
         'data_publicacao',
         'titulo',
         'arquivo_nome',
@@ -40,6 +41,11 @@ class Article extends Model
     public function autor()
     {
         return $this->belongsTo(Student::class);
+    }
+
+    public function curso()
+    {
+        return $this->belongsTo(Course::class);
     }
 
     public function orientador()
