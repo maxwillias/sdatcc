@@ -40,7 +40,7 @@ class AdvisorController extends Controller
 
         Advisor::create([
             'nome' => $data['nome'],
-            'curso' => $data['curso'],
+            'curso_id' => $data['curso'],
         ]);
 
         return to_route('admin.advisors.index')->with('success', 'O Orientador foi salvo com sucesso.');
@@ -65,7 +65,7 @@ class AdvisorController extends Controller
 
         $advisor->updateOrFail([
             'nome' => $data['nome'],
-            'curso' => $data['curso'],
+            'curso_id' => $data['curso'],
         ]);
 
         return to_route('admin.advisors.index')->with('success', 'O Orientador foi atualizado com sucesso.');

@@ -11,7 +11,7 @@
                     <!-- Aluno -->
                     <div class="mb-4">
                         <label for="aluno" class="block mb-1 text-sm font-medium text-gray-700">Aluno</label>
-                        <select class="w-full border select2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 py-2 px-4">
+                        <select name="aluno" class="w-full border select2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 py-2 px-4">
                             <option value="{{ $item->aluno->id }}" selected>{{ $item->aluno->nome }}</option>
                             @foreach ($students as $student)
                                 <option value="{{ $student->id }}">{{ $student->nome }}</option>
@@ -22,7 +22,7 @@
                     <!-- Orientador -->
                     <div class="mb-4">
                         <label for="orientador" class="block mb-1 text-sm font-medium text-gray-700">Orientador</label>
-                        <select class="w-full border select2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 py-2 px-4">
+                        <select name="orientador" class="w-full border select2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 py-2 px-4">
                             <option value="{{ $item->orientador->id }}" selected>{{ $item->orientador->nome }}</option>
                             @foreach ($advisors as $advisor)
                                 <option value="{{ $advisor->id }}">{{ $advisor->nome }}</option>

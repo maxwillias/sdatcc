@@ -10,7 +10,7 @@
                     <!-- Autor -->
                     <div class="mb-4">
                         <label for="autor" class="block mb-1 text-sm font-medium text-gray-700">Autor</label>
-                        <select class="w-full border select2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 py-2 px-4">
+                        <select name="autor" class="w-full border select2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 py-2 px-4">
                             <option value="" disabled selected>Selecione o autor</option>
                             @foreach ($students as $student)
                                 <option value="{{ $student->id }}">{{ $student->nome }}</option>
@@ -21,7 +21,7 @@
                     <!-- Orientador -->
                     <div class="mb-4">
                         <label for="orientador" class="block mb-1 text-sm font-medium text-gray-700">Orientador</label>
-                        <select class="w-full border select2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 py-2 px-4">
+                        <select name="orientador" class="w-full border select2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 py-2 px-4">
                             <option value="" disabled selected>Selecione o orientador</option>
                             @foreach ($advisors as $advisor)
                                 <option value="{{ $advisor->id }}">{{ $advisor->nome }}</option>

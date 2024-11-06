@@ -40,7 +40,7 @@ class StudentController extends Controller
 
         Student::create([
             'nome' => $data['nome'],
-            'curso' => $data['curso'],
+            'curso_id' => $data['curso'],
         ]);
 
         return to_route('admin.students.index')->with('success', 'O Aluno foi salvo com sucesso.');
@@ -65,7 +65,7 @@ class StudentController extends Controller
 
         $student->updateOrFail([
             'nome' => $data['nome'],
-            'curso' => $data['curso'],
+            'curso_id' => $data['curso'],
         ]);
 
         return to_route('admin.students.index')->with('success', 'O Aluno foi atualizado com sucesso.');

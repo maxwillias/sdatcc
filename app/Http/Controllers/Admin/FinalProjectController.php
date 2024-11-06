@@ -46,8 +46,9 @@ class FinalProjectController extends Controller
         $arquivo_path = $file->store('TCCs', 'public');
 
         FinalProject::create([
-            'aluno' => $data['aluno'],
-            'orientador' => $data['orientador'],
+            'aluno_id' => $data['aluno'],
+            'orientador_id' => $data['orientador'],
+            'curso_id' => Student::find($data['aluno'])->curso->id,
             'data_publicacao' => $data['data_publicacao'],
             'titulo' => $data['titulo'],
             'arquivo_nome' => $arquivo_nome,
@@ -83,8 +84,9 @@ class FinalProjectController extends Controller
             $arquivo_path = $file->store('TCCs', 'public');
 
             $final_project->updateOrFail([
-                'aluno' => $data['aluno'],
-                'orientador' => $data['orientador'],
+                'aluno_id' => $data['aluno'],
+                'orientador_id' => $data['orientador'],
+                'curso_id' => Student::find($data['aluno'])->curso->id,
                 'data_publicacao' => $data['data_publicacao'],
                 'titulo' => $data['titulo'],
                 'arquivo_nome' => $arquivo_nome,
@@ -92,8 +94,9 @@ class FinalProjectController extends Controller
             ]);
         }else{
             $final_project->updateOrFail([
-                'aluno' => $data['aluno'],
-                'orientador' => $data['orientador'],
+                'aluno_id' => $data['aluno'],
+                'orientador_id' => $data['orientador'],
+                'curso_id' => Student::find($data['aluno'])->curso->id,
                 'data_publicacao' => $data['data_publicacao'],
                 'titulo' => $data['titulo'],
             ]);

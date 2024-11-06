@@ -46,8 +46,9 @@ class ArticleController extends Controller
         $arquivo_path = $file->store('Artigos', 'public');
 
         Article::create([
-            'autor' => $data['autor'],
-            'orientador' => $data['orientador'],
+            'autor_id' => $data['autor'],
+            'orientador_id' => $data['orientador'],
+            'curso_id' => Student::find($data['autor'])->curso->id,
             'data_publicacao' => $data['data_publicacao'],
             'titulo' => $data['titulo'],
             'arquivo_nome' => $arquivo_nome,
@@ -83,8 +84,9 @@ class ArticleController extends Controller
             $arquivo_path = $file->store('Artigos', 'public');
 
             $article->updateOrFail([
-                'autor' => $data['autor'],
-                'orientador' => $data['orientador'],
+                'autor_id' => $data['autor'],
+                'orientador_id' => $data['orientador'],
+                'curso_id' => Student::find($data['autor'])->curso->id,
                 'data_publicacao' => $data['data_publicacao'],
                 'titulo' => $data['titulo'],
                 'arquivo_nome' => $arquivo_nome,
@@ -92,8 +94,9 @@ class ArticleController extends Controller
             ]);
         }else{
             $article->updateOrFail([
-                'autor' => $data['autor'],
-                'orientador' => $data['orientador'],
+                'autor_id' => $data['autor'],
+                'orientador_id' => $data['orientador'],
+                'curso_id' => Student::find($data['autor'])->curso->id,
                 'data_publicacao' => $data['data_publicacao'],
                 'titulo' => $data['titulo'],
             ]);
