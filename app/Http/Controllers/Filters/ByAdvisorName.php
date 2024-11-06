@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\FIlters;
+namespace App\Http\Controllers\Filters;
 
 use Closure;
 use Illuminate\Http\Request;
