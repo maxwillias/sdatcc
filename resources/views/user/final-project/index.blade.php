@@ -11,50 +11,79 @@
 
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-4">
         <div class="bg-white dark:bg-gray-800 overflow-hidden p-4 shadow-sm sm:rounded-lg border-solid border-2 border-[#5ACC58]">
-            <b>Filtros</b>
+            <b class="ms-4">Filtros</b>
             <form action="{{ route('user.project.search') }}">
-                <div class="flex items-center w-full space-x-4 bg-gray-100 p-4 rounded-lg">
-                    <input type="text" value="{{ request()->titulo ?? null }}" name="titulo" placeholder="Titulo" class="flex-grow px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                    <div class="w-1/2">
-                        <select name="aluno" class="w-full border select2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 py-2 px-4">
-                            @if (request()->aluno)
-                                <option value="{{ request()->aluno }}" selected>{{ $students->firstWhere('id', request()->aluno)->nome }}</option>
-                            @else
-                                <option value="" disabled selected>Selecione o aluno</option>
-                            @endif
-                            @foreach ($students as $student)
-                                <option value="{{ $student->id }}">{{ $student->nome }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="w-1/2">
-                        <select name="orientador" class="w-full border select2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 py-2 px-4">
-                            @if (request()->orientador)
-                                <option value="{{ request()->orientador }}" selected>{{ $advisors->firstWhere('id', request()->orientador)->nome }}</option>
-                            @else
-                                <option value="" disabled selected>Selecione o orientador</option>
-                            @endif
-                            @foreach ($advisors as $advisor)
-                                <option value="{{ $advisor->id }}">{{ $advisor->nome }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="relative">
-                        <input type="date" value="{{ request()->inicial_data ?? null }}" name="inicial_data" class="block px-2.5 pb-2.5 pt-4 w-full text-sm bg-white text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"/>
-                        <label class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 left-2.5">
-                            Data de inicio
-                        </label>
-                    </div>
-                    <div class="relative">
-                        <input name="final_data" value="{{ request()->final_data ?? null }}" type="date" class="block px-2.5 pb-2.5 pt-4 w-full text-sm bg-white text-gray-900 bg-transparent border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"/>
-                        <label class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 left-2.5">
-                            Data final
-                        </label>
+                <div class="max-w-6xl mx-auto p-6 bg-gray-100 rounded-xl shadow-sm border border-gray-200">
+                    <div class="flex flex-wrap gap-4 mb-4">
+                        <div class="flex-grow min-w-[300px]">
+                            <input type="text" value="{{ request()->titulo ?? null }}" name="titulo" placeholder="Titulo" class="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div class="min-w-[200px]">
+                            <select name="aluno" class="w-full select2 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700">
+                                @if (request()->aluno)
+                                    <option value="{{ request()->aluno }}" selected>{{ $students->firstWhere('id', request()->aluno)->nome }}</option>
+                                @else
+                                    <option value="" disabled selected>Selecione o aluno</option>
+                                @endif
+                                @foreach ($students as $student)
+                                    <option value="{{ $student->id }}">{{ $student->nome }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="min-w-[200px]">
+                            <select name="orientador" class="w-full select2 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700">
+                                @if (request()->orientador)
+                                    <option value="{{ request()->orientador }}" selected>{{ $advisors->firstWhere('id', request()->orientador)->nome }}</option>
+                                @else
+                                    <option value="" disabled selected>Selecione o orientador</option>
+                                @endif
+                                @foreach ($advisors as $advisor)
+                                    <option value="{{ $advisor->id }}">{{ $advisor->nome }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
 
-                    <button class="flex-grow bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded-lg">
-                    Buscar
-                    </button>
+                    <div class="flex flex-wrap gap-4 items-end">
+                        <div class="min-w-[300px]">
+                            <select name="curso" class="w-full select2 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700">
+                                @if (request()->curso)
+                                    <option value="{{ request()->curso }}" selected>{{ $courses->firstWhere('id', request()->curso)->sigla }}</option>
+                                @else
+                                    <option value="" disabled selected>Selecione o curso</option>
+                                @endif
+                                @foreach ($courses as $course)
+                                    <option value="{{ $course->id }}">{{ $course->sigla }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="flex-grow min-w-[200px] relative">
+                            <input type="date" value="{{ request()->inicial_data ?? null }}" name="inicial_data" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700"/>
+                            <label class="absolute text-sm text-gray-500 -top-2 left-2 bg-white px-1">
+                                Data de inicio
+                            </label>
+                        </div>
+                        <div class="flex-grow min-w-[200px] relative">
+                            <input name="final_data" value="{{ request()->final_data ?? null }}" type="date" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700"/>
+                            <label class="absolute text-sm text-gray-500 -top-2 left-2 bg-white px-1">
+                                Data final
+                            </label>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="flex items-center gap-2 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                                Buscar
+                            </button>
+                            <a href="{{ route('user.final-projects.index') }}" class="flex items-center gap-2 px-6 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                                Limpar
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>

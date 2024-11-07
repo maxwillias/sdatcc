@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreFinalProjectRequest;
 use App\Http\Requests\UpdateFinalProjectRequest;
 use App\Models\Advisor;
+use App\Models\Course;
 use App\Models\FinalProject;
 use App\Models\Student;
 use Illuminate\Support\Facades\Storage;
@@ -20,8 +21,9 @@ class FinalProjectController extends Controller
         $items = FinalProject::search()->paginate(10);
         $students = Student::search()->get();
         $advisors = Advisor::search()->get();
+        $courses = Course::search()->get();
 
-        return view('admin.final-project.index', compact('items', 'students', 'advisors'));
+        return view('admin.final-project.index', compact('items', 'students', 'advisors', 'courses'));
     }
 
     /**

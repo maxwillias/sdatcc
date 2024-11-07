@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\Advisor;
 use App\Models\Article;
+use App\Models\Course;
 use App\Models\Student;
 
 class ArticleController extends Controller
@@ -17,7 +18,8 @@ class ArticleController extends Controller
         $items = Article::search()->paginate(10);
         $students = Student::search()->get();
         $advisors = Advisor::search()->get();
+        $courses = Course::search()->get();
 
-        return view('user.article.index', compact('items', 'students', 'advisors'));
+        return view('user.article.index', compact('items', 'students', 'advisors', 'courses'));
     }
 }

@@ -4,10 +4,12 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Filters\ByAdvisor;
+use App\Http\Controllers\Filters\ByCourse;
 use App\Http\Controllers\Filters\ByDate;
 use App\Http\Controllers\Filters\ByStudent;
 use App\Http\Controllers\Filters\ByTitle;
 use App\Models\Advisor;
+use App\Models\Course;
 use App\Models\FinalProject;
 use App\Models\Student;
 use Illuminate\Http\Request;
@@ -19,6 +21,7 @@ class FinalProjectSearchableController extends Controller
     {
         $students = Student::search()->get();
         $advisors = Advisor::search()->get();
+        $courses = Course::search()->get();
 
         $items = app(Pipeline::class)
             ->send(FinalProject::query()->orderByDesc('id'))
@@ -27,10 +30,11 @@ class FinalProjectSearchableController extends Controller
                 ByStudent::class,
                 ByAdvisor::class,
                 ByDate::class,
+                ByCourse::class,
             ])
             ->thenReturn()
             ->paginate(10);
 
-        return view('user.final-project.index', compact('items', 'students', 'advisors'));
+        return view('user.final-project.index', compact('items', 'students', 'advisors', 'courses'));
     }
 }

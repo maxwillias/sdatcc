@@ -7,6 +7,7 @@ use App\Http\Requests\StoreArticleRequest;
 use App\Http\Requests\UpdateArticleRequest;
 use App\Models\Advisor;
 use App\Models\Article;
+use App\Models\Course;
 use App\Models\Student;
 use Illuminate\Support\Facades\Storage;
 
@@ -20,8 +21,9 @@ class ArticleController extends Controller
         $items = Article::search()->paginate(10);
         $students = Student::search()->get();
         $advisors = Advisor::search()->get();
+        $courses = Course::search()->get();
 
-        return view('admin.article.index', compact('items', 'students', 'advisors'));
+        return view('admin.article.index', compact('items', 'students', 'advisors', 'courses'));
     }
 
     /**
