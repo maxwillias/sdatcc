@@ -1,4 +1,4 @@
-<x-admin-layout>
+<x-user-layout>
     <div class="max-w-7xl mx-auto my-6 grid grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-4 max-xl:px-4">
         <div class="flex bg-blue-700 text-white rounded-md">
             <div class="bg-blue-800 pb-4 pt-6 px-4 rounded-l-md">
@@ -48,4 +48,4 @@
     @push('last_js')
         @vite(['resources/js/charts.js'])
     @endpush
-</x-admin-layout>
+</x-user-layout>

@@ -12,6 +12,12 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('user.dashboard')" :active="request()->routeIs('user.dashboard')">
+                        Painel de controle
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('user.final-projects.index')" :active="request()->routeIs('user.final-projects.index') || request()->routeIs('user.project.search')">
                         Trabalhos de conclusão de curso
                     </x-nav-link>

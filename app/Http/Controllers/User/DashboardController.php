@@ -1,14 +1,21 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
+use App\Http\Controllers\Controller;
+use App\Models\Article;
 use App\Models\Course;
+use App\Models\FinalProject;
 
 class DashboardController extends Controller
 {
     public function index()
     {
-        return view('admin.dashboard');
+        $courses = Course::search()->get();
+        $finalProjects = FinalProject::search()->get();
+        $articles = Article::search()->get();
+
+        return view('user.dashboard', compact('courses', 'finalProjects', 'articles'));
     }
 
     public function chartProjects()

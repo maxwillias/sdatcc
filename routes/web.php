@@ -10,7 +10,7 @@ use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\CourseSearchableController;
 use App\Http\Controllers\Admin\StudentSearchableController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\User\ArticleController;
 use App\Http\Controllers\User\FinalProjectController;
 use App\Http\Controllers\ProfileController;
@@ -18,6 +18,7 @@ use App\Http\Controllers\User\FinalProjectSearchableController;
 use App\Http\Controllers\User\ArticleDownloadController;
 use App\Http\Controllers\User\ArticleEmbedController;
 use App\Http\Controllers\User\ArticleSearchableController;
+use App\Http\Controllers\User\DashboardController as UserDashboardController;
 use App\Http\Controllers\User\FinalProjectDownloadController;
 use App\Http\Controllers\User\FinalProjectEmbedController;
 use Illuminate\Support\Facades\Route;
@@ -54,6 +55,9 @@ Route::group(['as' => 'user.'], function () {
         Route::resource('articles', ArticleController::class)->only(['index']);
         Route::get('/final-projects/search', FinalProjectSearchableController::class)->name('project.search');
         Route::get('/articles/search', ArticleSearchableController::class)->name('article.search');
+        Route::get('dashboard', [UserDashboardController::class, 'index'])->name('dashboard');
+        Route::get('dashboard/chart-project', [UserDashboardController::class, 'chartProjects'])->name('dashboard.chart-project');
+        Route::get('dashboard/chart-article', [UserDashboardController::class, 'chartArticles'])->name('dashboard.chart-article');
     });
 });
 
