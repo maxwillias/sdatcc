@@ -108,6 +108,9 @@
                                             Orientador
                                         </th>
                                         <th scope="col" class="px-6 py-3 text-center">
+                                            Curso
+                                        </th>
+                                        <th scope="col" class="px-6 py-3 text-center">
                                             Data de publicação
                                         </th>
                                         <th scope="col" class="px-6 py-3 text-center">
@@ -125,6 +128,9 @@
                                         </td>
                                         <td class="px-6 py-4 text-center w-[150px]">
                                             {{ $item->orientador->nome }}
+                                        </td>
+                                        <td class="px-6 py-4 text-center w-[150px]">
+                                            {{ $item->curso->nome }}
                                         </td>
                                         <td class="px-6 py-4 text-center">
                                             {{ $item->data_publicacao->translatedFormat('j \\d\\e F \\d\\e Y') }}

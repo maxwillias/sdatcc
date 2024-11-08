@@ -17,26 +17,41 @@
 
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-4">
         <div class="bg-white dark:bg-gray-800 overflow-hidden p-4 shadow-sm sm:rounded-lg border-solid border-2 border-[#5ACC58]">
-            <b>Filtros</b>
+            <b class="ms-4">Filtros</b>
             <form action="{{ route('admin.student.search') }}">
-                <div class="flex items-center w-full space-x-4 bg-gray-100 p-4 rounded-lg">
-                    <input name="aluno_nome" value="{{ request()->aluno_nome ?? null }}" type="text" name="nome" placeholder="Nome" class="flex-grow px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                    <div class="w-1/2">
-                        <select name="curso" class="w-full border select2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 py-2 px-4">
-                            @if (request()->curso)
-                                <option value="{{ request()->curso }}" selected>{{ $courses->firstWhere('id', request()->curso)->nome }}</option>
-                            @else
-                                <option value="" disabled selected>Selecione o curso</option>
-                            @endif
-                            @foreach ($courses as $course)
-                                <option value="{{ $course->id }}">{{ $course->nome }}</option>
-                            @endforeach
-                        </select>
-                    </div>
+                <div class="max-w-6xl mx-auto p-6 bg-gray-100 rounded-xl shadow-sm border border-gray-200">
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex-grow min-w-[300px]">
+                            <input type="text" value="{{ request()->aluno_nome ?? null }}" name="aluno_nome" placeholder="Nome" class="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div class="min-w-[300px]">
+                            <select name="curso" class="w-full select2 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700">
+                                @if (request()->curso)
+                                    <option value="{{ request()->curso }}" selected>{{ $courses->firstWhere('id', request()->curso)->nome }}</option>
+                                @else
+                                    <option value="" disabled selected>Selecione o curso</option>
+                                @endif
+                                @foreach ($courses as $course)
+                                    <option value="{{ $course->id }}">{{ $course->nome }}</option>
+                                @endforeach
+                            </select>
+                        </div>
 
-                    <button class="flex-grow bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded-lg">
-                    Buscar
-                    </button>
+                        <div class="flex gap-2">
+                            <button class="flex items-center gap-2 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                                Buscar
+                            </button>
+                            <a href="{{ route('admin.students.index') }}" class="flex items-center gap-2 px-6 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                                Limpar
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>
