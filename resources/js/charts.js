@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const labels = data.map(articlesByCourse => articlesByCourse.sigla);
             const projectCounts = data.map(articlesByCourse => articlesByCourse.articles_count);
 
-            const ctx = document.getElementById('myCharts');
+            const ctx = document.getElementById('article-chart');
             new Chart(ctx, {
                 type: 'bar',
                 data: {
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const labels = data.map(projectsByCourse => projectsByCourse.sigla);
             const projectCounts = data.map(projectsByCourse => projectsByCourse.projects_count);
 
-            const ctx = document.getElementById('myChart');
+            const ctx = document.getElementById('project-chart');
             new Chart(ctx, {
                 type: 'bar',
                 data: {
