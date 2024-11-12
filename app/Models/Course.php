@@ -23,15 +23,15 @@ class Course extends Model
 
     public function advisors()
     {
-        return $this->hasMany(Advisor::class);
+        return $this->hasMany(Advisor::class, 'curso_id');
     }
 
     public function students()
     {
-        return $this->hasMany(Student::class);
+        return $this->hasMany(Student::class, 'curso_id');
     }
 
-    public function projects()
+    public function finalProjects()
     {
         return $this->hasMany(FinalProject::class, 'curso_id');
     }
@@ -44,5 +44,23 @@ class Course extends Model
     protected static function newFactory()
     {
         return CourseFactory::new();
+    }
+
+    protected static function booted()
+    {
+        static::deleting(function ($course) {
+            $course->advisors()->each(function ($advisor) {
+                $advisor->finalProjects()->delete();
+                $advisor->articles()->delete();
+                $advisor->delete();
+            });
+            $course->students()->each(function ($student) {
+                $student->finalProject()->delete();
+                $student->articles()->delete();
+                $student->delete();
+            });
+            $course->finalProjects()->delete();
+            $course->articles()->delete();
+        });
     }
 }

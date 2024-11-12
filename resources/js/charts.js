@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(response => response.json())
         .then(data => {
             const labels = data.map(projectsByCourse => projectsByCourse.sigla);
-            const projectCounts = data.map(projectsByCourse => projectsByCourse.projects_count);
+            const projectCounts = data.map(projectsByCourse => projectsByCourse.final_projects_count);
 
             const ctx = document.getElementById('project-chart');
             new Chart(ctx, {

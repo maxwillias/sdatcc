@@ -23,12 +23,12 @@ class Student extends Model
 
     public function finalProject()
     {
-        return $this->hasOne(FinalProject::class);
+        return $this->hasOne(FinalProject::class, 'aluno_id');
     }
 
     public function articles()
     {
-        return $this->hasMany(Article::class);
+        return $this->hasMany(Article::class, 'autor_id');
     }
 
     public function curso()
@@ -39,5 +39,13 @@ class Student extends Model
     protected static function newFactory()
     {
         return StudentFactory::new();
+    }
+
+    protected static function booted()
+    {
+        static::deleting(function ($student) {
+            $student->finalProject()->delete();
+            $student->articles()->delete();
+        });
     }
 }

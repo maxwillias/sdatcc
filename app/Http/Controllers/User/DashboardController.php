@@ -20,7 +20,7 @@ class DashboardController extends Controller
 
     public function chartProjects()
     {
-        $projectsByCourse = Course::withCount('projects')->get();
+        $projectsByCourse = Course::withCount('finalProjects')->get();
 
         return response()->json($projectsByCourse);
     }

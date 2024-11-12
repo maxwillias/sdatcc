@@ -23,12 +23,12 @@ class Advisor extends Model
 
     public function finalProjects()
     {
-        return $this->hasMany(FinalProject::class);
+        return $this->hasMany(FinalProject::class, 'orientador_id');
     }
 
     public function articles()
     {
-        return $this->hasMany(Article::class);
+        return $this->hasMany(Article::class, 'orientador_id');
     }
 
     public function curso()
@@ -39,5 +39,13 @@ class Advisor extends Model
     protected static function newFactory()
     {
         return AdvisorFactory::new();
+    }
+
+    protected static function booted()
+    {
+        static::deleting(function ($advisor) {
+            $advisor->finalProjects()->delete();
+            $advisor->articles()->delete();
+        });
     }
 }
