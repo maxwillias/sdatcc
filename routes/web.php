@@ -62,7 +62,7 @@ Route::group(['as' => 'user.'], function () {
 });
 
 Route::get('/', function () {
-    return to_route('user.final-projects.index');
+    return to_route('user.dashboard');
 });
 
 Route::middleware('auth')->group(function () {
