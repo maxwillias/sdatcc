@@ -24,6 +24,11 @@
                         <div class="flex-grow min-w-[300px]">
                             <input type="text" value="{{ request()->titulo ?? null }}" name="titulo" placeholder="Titulo" class="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                         </div>
+                    </div>
+                    <div class="flex flex-wrap gap-4 mb-4">
+                        <div class="flex-grow min-w-[300px]">
+                            <input type="text" value="{{ request()->palavras_chave ?? null }}" name="palavras_chave" placeholder="Palavras chave" class="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
                         <div class="min-w-[200px]">
                             <select name="aluno" class="w-full select2 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700">
                                 @if (request()->aluno)

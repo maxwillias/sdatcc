@@ -53,6 +53,7 @@ class FinalProjectController extends Controller
             'curso_id' => Student::find($data['aluno'])->curso->id,
             'data_publicacao' => $data['data_publicacao'],
             'titulo' => $data['titulo'],
+            'palavras_chave' => $data['palavras_chave'],
             'arquivo_nome' => $arquivo_nome,
             'arquivo_path' => $arquivo_path,
         ]);
@@ -91,6 +92,7 @@ class FinalProjectController extends Controller
                 'curso_id' => Student::find($data['aluno'])->curso->id,
                 'data_publicacao' => $data['data_publicacao'],
                 'titulo' => $data['titulo'],
+                'palavras_chave' => $data['palavras_chave'],
                 'arquivo_nome' => $arquivo_nome,
                 'arquivo_path' => $arquivo_path,
             ]);
@@ -101,6 +103,7 @@ class FinalProjectController extends Controller
                 'curso_id' => Student::find($data['aluno'])->curso->id,
                 'data_publicacao' => $data['data_publicacao'],
                 'titulo' => $data['titulo'],
+                'palavras_chave' => $data['palavras_chave'],
             ]);
         }
         return to_route('admin.final-projects.index')->with('success', 'O TCC foi atualizado com sucesso.');

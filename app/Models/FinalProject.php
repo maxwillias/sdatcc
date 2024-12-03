@@ -22,6 +22,7 @@ class FinalProject extends Model
         'curso_id',
         'data_publicacao',
         'titulo',
+        'palavras_chave',
         'arquivo_nome',
         'arquivo_path',
     ];

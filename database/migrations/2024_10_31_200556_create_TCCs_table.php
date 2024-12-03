@@ -17,9 +17,10 @@ return new class extends Migration
             $table->foreignId('orientador_id')->constrained('Orientadores')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('curso_id')->constrained('Cursos')->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('titulo');
+            $table->string('palavras_chave');
             $table->string('arquivo_nome')->nullable();
             $table->string('arquivo_path')->nullable();
-            $table->date('data_publicacao')->nullable();
+            $table->date('data_publicacao');
             $table->timestamps();
             $table->softDeletes();
         });

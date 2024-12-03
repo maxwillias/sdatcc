@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\Filters\ByAdvisor;
 use App\Http\Controllers\Filters\ByCourse;
 use App\Http\Controllers\Filters\ByDate;
+use App\Http\Controllers\Filters\ByKeyWords;
 use App\Http\Controllers\Filters\ByStudent;
 use App\Http\Controllers\Filters\ByTitle;
 use App\Models\Advisor;
@@ -27,6 +28,7 @@ class FinalProjectSearchableController extends Controller
             ->send(FinalProject::query()->orderByDesc('id'))
             ->through([
                 ByTitle::class,
+                ByKeyWords::class,
                 ByStudent::class,
                 ByAdvisor::class,
                 ByDate::class,
