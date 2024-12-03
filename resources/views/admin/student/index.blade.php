@@ -21,10 +21,13 @@
             <form action="{{ route('admin.student.search') }}">
                 <div class="max-w-6xl mx-auto p-6 bg-gray-100 rounded-xl shadow-sm border border-gray-200">
                     <div class="flex flex-wrap gap-4">
+                        <div class="min-w-[100px]">
+                            <input type="text" value="{{ request()->matricula ?? null }}" name="matricula" placeholder="Matricula" class="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
                         <div class="flex-grow min-w-[300px]">
                             <input type="text" value="{{ request()->aluno_nome ?? null }}" name="aluno_nome" placeholder="Nome" class="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                         </div>
-                        <div class="min-w-[300px]">
+                        <div class="max-w-[250px]">
                             <select name="curso" class="w-full select2 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700">
                                 @if (request()->curso)
                                     <option value="{{ request()->curso }}" selected>{{ $courses->firstWhere('id', request()->curso)->nome }}</option>
@@ -67,6 +70,9 @@
                                 <thead class="text-xs text-white uppercase bg-[#5ACC58]">
                                     <tr>
                                         <th scope="col" class="px-6 py-3 text-center">
+                                            Matricula
+                                        </th>
+                                        <th scope="col" class="px-6 py-3 text-center">
                                             Nome
                                         </th>
                                         <th scope="col" class="px-6 py-3 text-center">
@@ -80,6 +86,9 @@
                                 <tbody>
                                     <tr
                                         class="bg-[#CCCFD4] h-[100px] border-b dark:bg-gray-800 dark:border-gray-700 text-gray-900">
+                                        <td class="px-6 py-4 text-center whitespace-normal w-[300px]">
+                                            {{ $item->matricula }}
+                                        </td>
                                         <td class="px-6 py-4 text-center whitespace-normal w-[400px]">
                                             {{ $item->nome }}
                                         </td>

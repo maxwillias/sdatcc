@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Filters\ByCourse;
+use App\Http\Controllers\Filters\ByRegistration;
 use App\Http\Controllers\Filters\ByStudentName;
 use App\Models\Course;
 use App\Models\Student;
@@ -20,6 +21,7 @@ class StudentSearchableController extends Controller
             ->send(Student::query()->orderByDesc('id'))
             ->through([
                 ByCourse::class,
+                ByRegistration::class,
                 ByStudentName::class,
             ])
             ->thenReturn()

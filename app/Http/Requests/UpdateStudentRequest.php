@@ -23,6 +23,7 @@ class UpdateStudentRequest extends FormRequest
     {
         return [
             'nome' => 'string',
+            'matricula' => 'string',
             'curso' => 'string',
         ];
     }

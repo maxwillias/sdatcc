@@ -18,6 +18,7 @@ class Student extends Model
 
     protected $fillable = [
         'nome',
+        'matricula',
         'curso_id',
     ];
 

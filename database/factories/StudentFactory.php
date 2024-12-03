@@ -22,6 +22,7 @@ class StudentFactory extends Factory
     {
         return [
             'nome' => fake()->name(),
+            'matricula' => fake()->numerify('######'),
             'curso_id' => Course::inRandomOrder()->first()->id,
         ];
     }

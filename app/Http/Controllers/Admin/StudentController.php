@@ -40,6 +40,7 @@ class StudentController extends Controller
 
         Student::create([
             'nome' => $data['nome'],
+            'matricula' => $data['matricula'],
             'curso_id' => $data['curso'],
         ]);
 
@@ -65,6 +66,7 @@ class StudentController extends Controller
 
         $student->updateOrFail([
             'nome' => $data['nome'],
+            'matricula' => $data['matricula'],
             'curso_id' => $data['curso'],
         ]);
 

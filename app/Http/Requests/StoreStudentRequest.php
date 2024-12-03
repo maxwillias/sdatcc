@@ -23,6 +23,7 @@ class StoreStudentRequest extends FormRequest
     {
         return [
             'nome' => 'string',
+            'matricula' => 'string',
             'curso' => 'string',
         ];
     }
