@@ -1,6 +1,9 @@
 <x-admin-layout>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <a href="{{ route('admin.advisors.index') }}" class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded">
+                « voltar
+            </a>
             <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md">
                 <h1 class="text-2xl font-semibold mb-6">Formulário de Edição de Orientador</h1>
 
