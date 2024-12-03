@@ -53,6 +53,8 @@ class ArticleController extends Controller
             'curso_id' => Student::find($data['autor'])->curso->id,
             'data_publicacao' => $data['data_publicacao'],
             'titulo' => $data['titulo'],
+            'publicado_em' => $data['publicado_em'],
+            'palavras_chave' => $data['palavras_chave'],
             'arquivo_nome' => $arquivo_nome,
             'arquivo_path' => $arquivo_path,
         ]);
@@ -91,6 +93,8 @@ class ArticleController extends Controller
                 'curso_id' => Student::find($data['autor'])->curso->id,
                 'data_publicacao' => $data['data_publicacao'],
                 'titulo' => $data['titulo'],
+                'publicado_em' => $data['publicado_em'],
+                'palavras_chave' => $data['palavras_chave'],
                 'arquivo_nome' => $arquivo_nome,
                 'arquivo_path' => $arquivo_path,
             ]);
@@ -101,6 +105,8 @@ class ArticleController extends Controller
                 'curso_id' => Student::find($data['autor'])->curso->id,
                 'data_publicacao' => $data['data_publicacao'],
                 'titulo' => $data['titulo'],
+                'publicado_em' => $data['publicado_em'],
+                'palavras_chave' => $data['palavras_chave'],
             ]);
         }
         return to_route('admin.articles.index')->with('success', 'O Artigo foi atualizado com sucesso.');

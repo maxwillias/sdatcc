@@ -35,6 +35,18 @@
                         <input type="text" id="titulo" name="titulo" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
                     </div>
 
+                    <!-- Publicado em -->
+                    <div class="mb-4">
+                        <label for="publicado_em" class="block text-sm font-medium text-gray-700">Publicado em</label>
+                        <input type="text" id="publicado_em" name="publicado_em" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                    </div>
+
+                    <!-- Palavras chave -->
+                    <div class="mb-4">
+                        <label for="palavras_chave" class="block text-sm font-medium text-gray-700">Palavras chave</label>
+                        <input type="text" id="palavras_chave" name="palavras_chave" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                    </div>
+
                     <!-- Data de Publicação -->
                     <div class="mb-4">
                         <label for="data_publicacao" class="block text-sm font-medium text-gray-700">Data de Publicação</label>

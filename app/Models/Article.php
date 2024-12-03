@@ -22,6 +22,8 @@ class Article extends Model
         'curso_id',
         'data_publicacao',
         'titulo',
+        'publicado_em',
+        'palavras_chave',
         'arquivo_nome',
         'arquivo_path',
     ];
