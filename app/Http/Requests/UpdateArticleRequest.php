@@ -25,6 +25,8 @@ class UpdateArticleRequest extends FormRequest
             'autor' => 'string',
             'orientador' => 'string',
             'titulo' => 'string',
+            'publicado_em' => 'string',
+            'palavras_chave' => 'string',
             'resumo' => 'string',
             'data_publicacao' => 'date',
             'arquivo' => 'file',
