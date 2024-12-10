@@ -53,6 +53,7 @@ class ArticleController extends Controller
             'curso_id' => Student::find($data['autor'])->curso->id,
             'data_publicacao' => $data['data_publicacao'],
             'titulo' => $data['titulo'],
+            'issn' => $data['issn'],
             'publicado_em' => $data['publicado_em'],
             'palavras_chave' => $data['palavras_chave'],
             'arquivo_nome' => $arquivo_nome,
@@ -93,6 +94,7 @@ class ArticleController extends Controller
                 'curso_id' => Student::find($data['autor'])->curso->id,
                 'data_publicacao' => $data['data_publicacao'],
                 'titulo' => $data['titulo'],
+                'issn' => $data['issn'],
                 'publicado_em' => $data['publicado_em'],
                 'palavras_chave' => $data['palavras_chave'],
                 'arquivo_nome' => $arquivo_nome,
@@ -105,6 +107,7 @@ class ArticleController extends Controller
                 'curso_id' => Student::find($data['autor'])->curso->id,
                 'data_publicacao' => $data['data_publicacao'],
                 'titulo' => $data['titulo'],
+                'issn' => $data['issn'],
                 'publicado_em' => $data['publicado_em'],
                 'palavras_chave' => $data['palavras_chave'],
             ]);

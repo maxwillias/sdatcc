@@ -25,6 +25,7 @@ class StoreArticleRequest extends FormRequest
             'autor' => 'string',
             'orientador' => 'string',
             'titulo' => 'string',
+            'issn' => 'string',
             'publicado_em' => 'string',
             'palavras_chave' => 'string',
             'resumo' => 'string',

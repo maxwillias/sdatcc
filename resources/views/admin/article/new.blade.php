@@ -38,6 +38,12 @@
                         <input type="text" id="titulo" name="titulo" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
                     </div>
 
+                    <!-- ISSN -->
+                    <div class="mb-4">
+                        <label for="issn" class="block text-sm font-medium text-gray-700">ISSN</label>
+                        <input type="text" id="issn" maxlength="9" name="issn" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                    </div>
+
                     <!-- Publicado em -->
                     <div class="mb-4">
                         <label for="publicado_em" class="block text-sm font-medium text-gray-700">Publicado em</label>

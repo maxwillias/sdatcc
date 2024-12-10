@@ -17,6 +17,15 @@ window.Alpine = Alpine;
 
 Alpine.start();
 
-$(function() {
-    $('.select2').select2();
+$('.select2').select2();
+
+$('#issn').on('input', function () {
+    let value = $(this).val().replace(/\D/g, '');
+    value = value.replace(/(\d{4})(\d)/, '$1-$2');
+    $(this).val(value);
+});
+
+$('#matricula').on('input', function () {
+    let value = $(this).val().replace(/\D/g, '');
+    $(this).val(value);
 });

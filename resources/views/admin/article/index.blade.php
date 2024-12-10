@@ -21,6 +21,9 @@
             <form action="{{ route('admin.article.search') }}">
                 <div class="max-w-6xl mx-auto p-6 bg-gray-100 rounded-xl shadow-sm border border-gray-200">
                     <div class="flex flex-wrap gap-4 mb-4">
+                        <div class="flex-grow max-w-[200px]">
+                            <input type="text" value="{{ request()->issn ?? null }}" name="issn" placeholder="ISSN" id="issn" maxlength="9" class="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
                         <div class="flex-grow min-w-[300px]">
                             <input type="text" value="{{ request()->publicado_em ?? null }}" name="publicado_em" placeholder="Publicado em" class="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                         </div>

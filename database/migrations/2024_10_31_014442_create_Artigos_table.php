@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('orientador_id')->constrained('Orientadores')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('curso_id')->constrained('Cursos')->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('titulo');
+            $table->string('issn');
             $table->string('palavras_chave');
             $table->string('publicado_em');
             $table->string('arquivo_nome')->nullable();

@@ -7,6 +7,7 @@ use App\Http\Controllers\Filters\ByAdvisor;
 use App\Http\Controllers\Filters\ByAuthor;
 use App\Http\Controllers\Filters\ByCourse;
 use App\Http\Controllers\Filters\ByDate;
+use App\Http\Controllers\Filters\ByIssn;
 use App\Http\Controllers\Filters\ByKeyWords;
 use App\Http\Controllers\Filters\ByPosted;
 use App\Http\Controllers\Filters\ByTitle;
@@ -29,6 +30,7 @@ class ArticleSearchableController extends Controller
             ->send(Article::query()->orderByDesc('id'))
             ->through([
                 ByTitle::class,
+                ByIssn::class,
                 ByKeyWords::class,
                 ByPosted::class,
                 ByAuthor::class,

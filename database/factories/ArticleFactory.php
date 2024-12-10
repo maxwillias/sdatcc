@@ -27,6 +27,7 @@ class ArticleFactory extends Factory
             'orientador_id' => Advisor::inRandomOrder()->first()->id,
             'curso_id' => Course::inRandomOrder()->first()->id,
             'titulo' => fake()->sentence(),
+            'issn' => fake()->numerify('####-####'),
             'palavras_chave' => fake()->word(),
             'publicado_em' => fake()->word(),
             'data_publicacao' => fake()->date(),
