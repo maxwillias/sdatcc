@@ -66,7 +66,7 @@
                     <!-- Arquivo -->
                     <div class="mb-4">
                         <label for="arquivo" class="block text-sm font-medium text-gray-700">Arquivo</label>
-                        <input type="file" id="arquivo" name="arquivo" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        <input type="file" accept=".pdf" id="arquivo" name="arquivo" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
                     </div>
 
                     <!-- Botão de Submissão -->
