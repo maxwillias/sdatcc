@@ -24,6 +24,7 @@ class StoreFinalProjectRequest extends FormRequest
         return [
             'aluno' => 'string',
             'orientador' => 'string',
+            'curso' => 'string',
             'titulo' => 'string',
             'palavras_chave' => 'string',
             'resumo' => 'string',

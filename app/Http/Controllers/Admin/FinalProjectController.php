@@ -33,8 +33,9 @@ class FinalProjectController extends Controller
     {
         $students = Student::search()->get();
         $advisors = Advisor::search()->get();
+        $courses = Course::search()->get();
 
-        return view('admin.final-project.new', compact('students', 'advisors'));
+        return view('admin.final-project.new', compact('students', 'advisors','courses'));
     }
 
     /**
@@ -50,7 +51,7 @@ class FinalProjectController extends Controller
         FinalProject::create([
             'aluno_id' => $data['aluno'],
             'orientador_id' => $data['orientador'],
-            'curso_id' => Student::find($data['aluno'])->curso->id,
+            'curso_id' => $data['curso'],
             'data_publicacao' => $data['data_publicacao'],
             'titulo' => $data['titulo'],
             'palavras_chave' => $data['palavras_chave'],
@@ -68,8 +69,9 @@ class FinalProjectController extends Controller
     {
         $students = Student::search()->get();
         $advisors = Advisor::search()->get();
+        $courses = Course::search()->get();
 
-        return view('admin.final-project.edit', ['item' => $final_project, 'students' => $students, 'advisors' => $advisors]);
+        return view('admin.final-project.edit', ['item' => $final_project, 'students' => $students, 'advisors' => $advisors, 'courses' => $courses]);
     }
 
     /**
@@ -89,7 +91,7 @@ class FinalProjectController extends Controller
             $final_project->updateOrFail([
                 'aluno_id' => $data['aluno'],
                 'orientador_id' => $data['orientador'],
-                'curso_id' => Student::find($data['aluno'])->curso->id,
+                'curso_id' => $data['curso'],
                 'data_publicacao' => $data['data_publicacao'],
                 'titulo' => $data['titulo'],
                 'palavras_chave' => $data['palavras_chave'],
@@ -100,7 +102,7 @@ class FinalProjectController extends Controller
             $final_project->updateOrFail([
                 'aluno_id' => $data['aluno'],
                 'orientador_id' => $data['orientador'],
-                'curso_id' => Student::find($data['aluno'])->curso->id,
+                'curso_id' => $data['curso'],
                 'data_publicacao' => $data['data_publicacao'],
                 'titulo' => $data['titulo'],
                 'palavras_chave' => $data['palavras_chave'],
