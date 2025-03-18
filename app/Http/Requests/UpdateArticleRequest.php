@@ -24,6 +24,7 @@ class UpdateArticleRequest extends FormRequest
         return [
             'autor' => 'string',
             'orientador' => 'string',
+            'curso' => 'string',
             'titulo' => 'string',
             'issn' => 'string',
             'publicado_em' => 'string',

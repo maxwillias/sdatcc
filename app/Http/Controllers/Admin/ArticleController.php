@@ -33,8 +33,9 @@ class ArticleController extends Controller
     {
         $students = Student::search()->get();
         $advisors = Advisor::search()->get();
+        $courses = Course::search()->get();
 
-        return view('admin.article.new', compact('students', 'advisors'));
+        return view('admin.article.new', compact('students', 'advisors', 'courses'));
     }
 
     /**
@@ -50,7 +51,7 @@ class ArticleController extends Controller
         Article::create([
             'autor_id' => $data['autor'],
             'orientador_id' => $data['orientador'],
-            'curso_id' => Student::find($data['autor'])->curso->id,
+            'curso_id' => $data['curso'],
             'data_publicacao' => $data['data_publicacao'],
             'titulo' => $data['titulo'],
             'issn' => $data['issn'],
@@ -70,8 +71,9 @@ class ArticleController extends Controller
     {
         $students = Student::search()->get();
         $advisors = Advisor::search()->get();
+        $courses = Course::search()->get();
 
-        return view('admin.article.edit', ['item' => $article, 'students' => $students, 'advisors' => $advisors]);
+        return view('admin.article.edit', ['item' => $article, 'students' => $students, 'advisors' => $advisors, 'courses' => $courses]);
     }
 
     /**
@@ -91,7 +93,7 @@ class ArticleController extends Controller
             $article->updateOrFail([
                 'autor_id' => $data['autor'],
                 'orientador_id' => $data['orientador'],
-                'curso_id' => Student::find($data['autor'])->curso->id,
+                'curso_id' => $data['curso'],
                 'data_publicacao' => $data['data_publicacao'],
                 'titulo' => $data['titulo'],
                 'issn' => $data['issn'],
@@ -104,7 +106,7 @@ class ArticleController extends Controller
             $article->updateOrFail([
                 'autor_id' => $data['autor'],
                 'orientador_id' => $data['orientador'],
-                'curso_id' => Student::find($data['autor'])->curso->id,
+                'curso_id' => $data['curso'],
                 'data_publicacao' => $data['data_publicacao'],
                 'titulo' => $data['titulo'],
                 'issn' => $data['issn'],
