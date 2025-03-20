@@ -12,13 +12,14 @@
 
                     <!-- Nome -->
                     <div class="mb-4">
-                        <label for="nome" class="block text-sm font-medium text-gray-700">Nome</label>
+
+                        <label for="nome" class="block text-sm font-medium text-gray-700">Nome <span class="text-red-500">*</span></label>
                         <input type="text" id="nome" name="nome" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
                     </div>
 
                     <!-- Sigla -->
                     <div class="mb-4">
-                        <label for="sigla" class="block text-sm font-medium text-gray-700">Sigla</label>
+                        <label for="sigla" class="block text-sm font-medium text-gray-700">Sigla <span class="text-red-500">*</span></label>
                         <input type="text" id="sigla" maxlength="4" name="sigla" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm uppercase" required>
                     </div>
 

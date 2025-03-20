@@ -12,8 +12,8 @@
 
                     <!-- Aluno -->
                     <div class="mb-4">
-                        <label for="aluno" class="block mb-1 text-sm font-medium text-gray-700">Aluno</label>
-                        <select name="aluno" class="w-full border select2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 py-2 px-4">
+                        <label for="aluno" class="block mb-1 text-sm font-medium text-gray-700">Aluno <span class="text-red-500">*</span></label>
+                        <select name="aluno" required class="w-full border select2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 py-2 px-4">
                             <option value="" disabled selected>Selecione o aluno</option>
                             @foreach ($students as $student)
                                 <option value="{{ $student->id }}">{{ $student->nome }}</option>
@@ -23,8 +23,8 @@
 
                     <!-- Orientador -->
                     <div class="mb-4">
-                        <label for="orientador" class="block mb-1 text-sm font-medium text-gray-700">Orientador</label>
-                        <select name="orientador" class="w-full border select2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 py-2 px-4">
+                        <label for="orientador" class="block mb-1 text-sm font-medium text-gray-700">Orientador <span class="text-red-500">*</span></label>
+                        <select name="orientador" required class="w-full border select2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 py-2 px-4">
                             <option value="" disabled selected>Selecione o orientador</option>
                             @foreach ($advisors as $advisor)
                                 <option value="{{ $advisor->id }}">{{ $advisor->nome }}</option>
@@ -34,8 +34,8 @@
 
                     <!-- Curso -->
                     <div class="mb-4">
-                        <label for="curso" class="block mb-1 text-sm font-medium text-gray-700">Curso</label>
-                        <select name="curso" class="w-full border select2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 py-2 px-4">
+                        <label for="curso" class="block mb-1 text-sm font-medium text-gray-700">Curso <span class="text-red-500">*</span></label>
+                        <select name="curso" required class="w-full border select2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 py-2 px-4">
                             <option value="" disabled selected>Selecione o curso</option>
                             @foreach ($courses as $course)
                                 <option value="{{ $course->id }}">{{ $course->nome }}</option>
@@ -45,25 +45,25 @@
 
                     <!-- Título -->
                     <div class="mb-4">
-                        <label for="titulo" class="block text-sm font-medium text-gray-700">Título</label>
+                        <label for="titulo" class="block text-sm font-medium text-gray-700">Título <span class="text-red-500">*</span></label>
                         <input type="text" id="titulo" name="titulo" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
                     </div>
 
                     <!-- Palavras chave -->
                     <div class="mb-4">
-                        <label for="palavras_chave" class="block text-sm font-medium text-gray-700">Palavras chave</label>
+                        <label for="palavras_chave" class="block text-sm font-medium text-gray-700">Palavras chave <span class="text-red-500">*</span></label>
                         <input type="text" id="palavras_chave" name="palavras_chave" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
                     </div>
 
                     <!-- Data de Publicação -->
                     <div class="mb-4">
-                        <label for="data_publicacao" class="block text-sm font-medium text-gray-700">Data de Publicação</label>
+                        <label for="data_publicacao" class="block text-sm font-medium text-gray-700">Data de Publicação <span class="text-red-500">*</span></label>
                         <input type="date" id="data_publicacao" name="data_publicacao" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
                     </div>
 
                     <!-- Arquivo -->
                     <div class="mb-4">
-                        <label for="arquivo" class="block text-sm font-medium text-gray-700">Arquivo</label>
+                        <label for="arquivo" class="block text-sm font-medium text-gray-700">Arquivo <span class="text-red-500">*</span></label>
                         <input type="file" accept=".pdf" id="arquivo" name="arquivo" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
                     </div>
 
