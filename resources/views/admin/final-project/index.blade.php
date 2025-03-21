@@ -3,12 +3,12 @@
 
     <x-slot name="header">
         <div class="flex">
-            <h2 class="font-semibold text-xl text-gray-400 leading-tight w-5/6 flex items-center">
+            <h2 class="font-semibold text-ms sm:text-xl text-gray-400 leading-tight w-5/6 flex items-center">
                 Trabalho Conclusão de Curso
-                <span class="bg-green-700 text-white text-xs px-3 py-2 rounded-full ml-2">{{ $items->total() }}</span>
+                <span class="bg-green-700 text-white text-sm sm:text-xs px-3 py-2 rounded-full ml-2">{{ $items->total() }}</span>
             </h2>
             <div class="w-1/6 flex justify-end">
-                <a href="{{ route('admin.final-projects.create') }}" class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded">
+                <a href="{{ route('admin.final-projects.create') }}" class="bg-green-700 text-sm hover:bg-green-800 text-white font-bold py-2 px-4 rounded">
                     Novo
                 </a>
             </div>

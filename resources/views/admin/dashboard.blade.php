@@ -36,7 +36,7 @@
     </div>
 
     <div class="flex max-w-7xl mx-auto gap-x-4 max-xl:px-4 max-lg:flex-wrap">
-        <div class="mx-auto h-[300px] my-1 w-1/2 max-lg:w-full bg-white shadow-md rounded">
+        <div class="mx-auto h-[300px] flex justify-center items-center my-1 w-1/2 max-lg:w-full bg-white shadow-md rounded">
             <canvas id="project-chart"></canvas>
         </div>
         <div class="mx-auto h-[300px] flex justify-center items-center my-1 w-1/2 max-lg:w-full bg-white shadow-md rounded">

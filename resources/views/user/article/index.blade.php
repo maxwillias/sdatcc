@@ -2,9 +2,9 @@
 
     <x-slot name="header">
         <div class="flex">
-            <h2 class="font-semibold text-xl text-gray-400 leading-tight w-5/6 flex items-center">
+            <h2 class="font-semibold text-ms sm:text-xl text-gray-400 leading-tight w-5/6 flex items-center">
                 Artigos
-                <span class="bg-green-700 text-white text-xs px-3 py-2 rounded-full ml-2">{{ $items->total() }}</span>
+                <span class="bg-green-700 text-white text-sm sm:text-xs px-3 py-2 rounded-full ml-2">{{ $items->total() }}</span>
             </h2>
         </div>
     </x-slot>
