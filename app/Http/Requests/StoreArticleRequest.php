@@ -31,7 +31,14 @@ class StoreArticleRequest extends FormRequest
             'palavras_chave' => 'string',
             'resumo' => 'string',
             'data_publicacao' => 'date',
-            'arquivo' => 'file',
+            'arquivo' => 'required|file|mimes:pdf',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'arquivo.mimes' => 'O arquivo precisa ser do tipo PDF.',
         ];
     }
 }

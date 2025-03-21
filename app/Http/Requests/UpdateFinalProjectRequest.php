@@ -29,7 +29,14 @@ class UpdateFinalProjectRequest extends FormRequest
             'palavras_chave' => 'string',
             'resumo' => 'string',
             'data_publicacao' => 'date',
-            'arquivo' => 'file',
+            'arquivo' => 'file|mimes:pdf',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'arquivo.mimes' => 'O arquivo precisa ser do tipo PDF.',
         ];
     }
 }
